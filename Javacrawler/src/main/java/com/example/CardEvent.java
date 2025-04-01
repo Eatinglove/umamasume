@@ -47,7 +47,7 @@ public class CardEvent {
             writeEvent(driver);
         }
         catch(Exception e){
-            System.out.println(url+" ¿ù»~ " + e.getMessage());
+            System.out.println(url+" éŒ¯èª¤ " + e.getMessage());
         }
         finally{
             driver.quit();
@@ -58,19 +58,16 @@ public class CardEvent {
         JavascriptExecutor js = (JavascriptExecutor) webdriver;
         StringBuilder cardEvent = new StringBuilder();
     
-        // §ä¨ì©Ò¦³ class="compatibility_viewer_item__SWULM" ªº¤¸¯À
+        // æ‰¾åˆ°æ‰€æœ‰ class="compatibility_viewer_item__SWULM" çš„å…ƒç´ 
         List<WebElement> items = webdriver.findElements(By.className("compatibility_viewer_item__SWULM"));
         int i=0;
         for (WebElement item : items) {
             try {
-                // ÂIÀ»¸Ó¤¸¯À¡AÄ²µo aria-expanded ÅÜ§ó
                 item.click();
-                Thread.sleep(1000); // µ¥«İÅÜ¤Æ¥Í®Ä
+                Thread.sleep(1000); 
                 
-                // Àò¨ú·í«eªº HTML
                 Document doc = Jsoup.parse(webdriver.getPageSource());
     
-                // Åª¨ú class="tooltips_ttable_cell__3NMF" ªº¤º®e
                 Elements events = doc.select("div.tooltips_ttable_cell___3NMF");
                 for (Element event : events) {
                     cardEvent.append(event.text()).append("\n");
@@ -78,11 +75,11 @@ public class CardEvent {
                 cardEvent.append("-------------------------\n");
     
             } catch (Exception e) {
-                System.out.println("³B²z¨Æ¥ó®Éµo¥Í¿ù»~¡G" + e.getMessage());
+                System.out.println("è™•ç†äº‹ä»¶æ™‚ç™¼ç”ŸéŒ¯èª¤ï¼š" + e.getMessage());
             }
         }
     
-        // ¿é¥X©Ò¦³Åª¨úªº¤º®e
+        // è¼¸å‡ºæ‰€æœ‰è®€å–çš„å…§å®¹
         System.out.println(cardEvent.toString());
     }
     
