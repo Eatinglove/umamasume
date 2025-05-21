@@ -109,7 +109,7 @@ public class CardEvent {
     private static final String DRIVER_PATH = "C:\\Users\\djes1\\Desktop\\uma\\chromedriver135.exe";
     private static final String OUTPUT_DIR = "C:\\Users\\djes1\\Desktop\\uma\\AllCardEvent";
     private static final String URL_PREFIX = "https://gametora.com";
-    private static final String FILE_PATH = "C:\\Users\\djes1\\Desktop\\uma\\sortedhref.txt";
+    private static final String FILE_PATH = "C:\\Users\\djes1\\Desktop\\uma\\sortedhref_supports.txt";
 
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver", DRIVER_PATH);
@@ -206,7 +206,7 @@ public class CardEvent {
         for (WebElement item : items) {
             try {
                 item.click();
-                Thread.sleep(1000);
+                Thread.sleep(100);
 
                 Document doc = Jsoup.parse(driver.getPageSource());
                 Elements events = doc.select("td.tooltips_ttable_cell___3NMF, div.tooltips_ttable_cell___3NMF, div.tooltips_ttable_heading__jlJcE");

@@ -178,7 +178,7 @@ public class CardInfo {
     private static final StringBuilder cardEffect = new StringBuilder();
 
     public static void main(String[] args) {
-        String filePath = "C:\\Users\\djes1\\Desktop\\uma\\sortedhref.txt"; 
+        String filePath = "C:\\Users\\djes1\\Desktop\\uma\\sortedhref_supports.txt"; 
         System.setProperty("webdriver.chrome.driver", DRIVER_PATH);
         WebDriver driver = new ChromeDriver();
 
