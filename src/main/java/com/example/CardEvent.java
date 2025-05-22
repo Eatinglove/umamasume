@@ -128,95 +128,51 @@ public class CardEvent {
             while ((line = br.readLine()) != null) {
                 String fullUrl = URL_PREFIX + line;
                 processCardEvent(driver, fullUrl);
-                //processCardEvent(driver, "https://gametora.com/zh-tw/umamusume/supports/30161-el-condor-pasa");
+                //processCardEvent(driver, "https://gametora.com/zh-tw/umamusume/supports/30160-mei-satake");
                 //break;
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
-    /*private static void processCardEvent(WebDriver driver, String url) {
-        String cardId = url.substring(url.lastIndexOf("/") + 1);
-        String fileName = OUTPUT_DIR + "\\" + cardId + ".txt";
-        File file = new File(fileName);*/
-
-        /*if (file.exists()) {
-            System.out.println("已存在，跳過：" + fileName);
-            return;
-        }*/
-
-        /*try {
-            driver.get(url);
-
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            wait.until(ExpectedConditions.presenceOfElementLocated(By.className("compatibility_viewer_item__SWULM")));
-
-            StringBuilder cardEvent = new StringBuilder();
-
-            List<WebElement> items = driver.findElements(By.className("compatibility_viewer_item__SWULM"));
-            for (WebElement item : items) {
-                try {
-                    item.click();
-                    Thread.sleep(1000);
-
-                    Document doc = Jsoup.parse(driver.getPageSource());
-                    Elements eventsDiv = doc.select("div.tooltips_ttable_cell___3NMF");
-                    Elements eventsTd = doc.select("td.tooltips_ttable_cell___3NMF,div.tooltips_ttable_heading__jlJcE");
-                    for (Element event : eventsDiv) {
-                        cardEvent.append(event.text()).append("\n");
-                    }
-                    for (Element event : eventsTd) {
-                        cardEvent.append(event.text()).append("\n");
-                    }
-                    
-                    cardEvent.append("-------------------------\n");
-                    
-                } catch (Exception e) {
-                    System.out.println("處理事件時發生錯誤：" + e.getMessage());
-                }
-            }
-            //System.out.println(cardEvent.toString());
-            saveToFile(cardId, cardEvent.toString());
-
-        } catch (Exception e) {
-            System.out.println("處理 " + url + " 時發生錯誤：" + e.getMessage());
-        }
-    }*/
-    private static void processCardEvent(WebDriver driver, String url) {
+private static void processCardEvent(WebDriver driver, String url) {
     String cardId = url.substring(url.lastIndexOf("/") + 1);
     String fileName = OUTPUT_DIR + "\\" + cardId + ".txt";
-    File file = new File(fileName);
-
-    /*if (file.exists()) {
-        System.out.println("已存在，跳過：" + fileName);
-        return;
-    }*/
 
     try {
         driver.get(url);
-
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.className("compatibility_viewer_item__SWULM")));
 
         StringBuilder cardEvent = new StringBuilder();
-        Set<String> seen = new HashSet<>();
+        Set<String> processedEvents = new HashSet<>();  
 
         List<WebElement> items = driver.findElements(By.className("compatibility_viewer_item__SWULM"));
         for (WebElement item : items) {
             try {
                 item.click();
-                Thread.sleep(100);
+                Thread.sleep(100); 
 
                 Document doc = Jsoup.parse(driver.getPageSource());
-                Elements events = doc.select("td.tooltips_ttable_cell___3NMF, div.tooltips_ttable_cell___3NMF, div.tooltips_ttable_heading__jlJcE");
+                
+                Element titleElement = doc.selectFirst("div.tooltips_ttable_heading__jlJcE");
+                if (titleElement == null) continue;
+                
+                String eventTitle = titleElement.text();
+                
+                if (processedEvents.contains(eventTitle)) continue;
+                
+                processedEvents.add(eventTitle);  
+                
+                Elements events = doc.select(
+                    "div.tooltips_ttable_heading__jlJcE, " +
+                    "td.tooltips_ttable_cell___3NMF, " +
+                    "div.tooltips_ttable_cell___3NMF"
+                );
+                
                 for (Element event : events) {
-                    String text = event.text();
-                    if (seen.add(text)) {
-                        cardEvent.append(text).append("\n");
-                    }
+                    cardEvent.append(event.text()).append("\n");
                 }
-
                 cardEvent.append("-------------------------\n");
 
             } catch (Exception e) {
@@ -229,7 +185,8 @@ public class CardEvent {
     } catch (Exception e) {
         System.out.println("處理 " + url + " 時發生錯誤：" + e.getMessage());
     }
-}
+    }
+    
 
     private static void saveToFile(String cardId, String content) {
         File folder = new File(OUTPUT_DIR);
