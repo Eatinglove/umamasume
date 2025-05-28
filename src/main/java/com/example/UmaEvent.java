@@ -35,9 +35,9 @@ public class UmaEvent {
             String line;
             while ((line = br.readLine()) != null) {
                 String fullUrl = URL_PREFIX + line;
-                processCardEvent(driver, fullUrl);
-                //processCardEvent(driver, "https://gametora.com/zh-tw/umamusume/characters/109001-verxina");
-                //break;
+                //processCardEvent(driver, fullUrl);
+                processCardEvent(driver, "https://gametora.com/zh-tw/umamusume/characters/109001-verxina");
+                break;
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -48,11 +48,10 @@ public class UmaEvent {
         String cardId = url.substring(url.lastIndexOf("/") + 1);
         String fileName = OUTPUT_DIR + "\\" + cardId + ".txt";
         File file = new File(fileName);
-
-        /*if (file.exists()) {
-            System.out.println("已存在，跳過：" + fileName);
-            return;
-        }*/
+        int count=0;
+        int fat=0;
+        int flag=0;
+//if exist skip
 
         try {
             driver.get(url);
@@ -66,15 +65,43 @@ public class UmaEvent {
             for (WebElement item : items) {
                 try {
                     item.click();
-                    Thread.sleep(100); 
+                    Thread.sleep(500); 
 
                     Document doc = Jsoup.parse(driver.getPageSource());
 
                     Elements events = doc.select("td.tooltips_ttable_cell___3NMF, div.tooltips_ttable_cell___3NMF, div.tooltips_ttable_heading__jlJcE");
 
                     for (Element event : events) {
+                        if(count==0){
+                            cardEvent.append("決勝服事件\n------------------\n");
+                        }
                         String text = event.text();
+                        String className = event.className();
+                        
+                        
+                        if(className.equals("tooltips_ttable_heading__jlJcE")){
+                            //System.out.println(className);
+                            count++;
+                        }
+                        if(count==4){
+                            cardEvent.append("有選項的事件\n-----------------\n");
+                            count++;
+                        }
                         cardEvent.append(text).append("\n");
+                        if(text.contains("獲得 體重過胖 狀態")){
+                            //System.out.println("fat lol");
+                            cardEvent.append("------------------\n外出事件\n");
+                            fat++;
+                        }
+                        if(fat==5){
+                            cardEvent.append("------------------\n沒有選項的事件\n");
+                            fat++;
+                        }
+                        if(text.contains("下選項")&&fat>0){
+                            //System.out.println(text);
+                            fat++;
+                        }
+                        
                         //System.out.println(text);
                     }
 
@@ -88,7 +115,7 @@ public class UmaEvent {
             saveToFile(cardId, cardEvent.toString());
 
         } catch (Exception e) {
-            System.out.println("failuwu" + e.getMessage());
+            System.out.println("處理 " + url + " 時發生錯誤：" + e.getMessage());
         }
     }
 

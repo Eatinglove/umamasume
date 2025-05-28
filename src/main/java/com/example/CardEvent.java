@@ -128,7 +128,7 @@ public class CardEvent {
             while ((line = br.readLine()) != null) {
                 String fullUrl = URL_PREFIX + line;
                 processCardEvent(driver, fullUrl);
-                //processCardEvent(driver, "https://gametora.com/zh-tw/umamusume/supports/30160-mei-satake");
+                //processCardEvent(driver, "https://gametora.com/zh-tw/umamusume/supports/30240-jungle-pocket");
                 //break;
             }
         } catch (IOException e) {
@@ -137,7 +137,6 @@ public class CardEvent {
     }
 private static void processCardEvent(WebDriver driver, String url) {
     String cardId = url.substring(url.lastIndexOf("/") + 1);
-    String fileName = OUTPUT_DIR + "\\" + cardId + ".txt";
 
     try {
         driver.get(url);
@@ -151,7 +150,7 @@ private static void processCardEvent(WebDriver driver, String url) {
         for (WebElement item : items) {
             try {
                 item.click();
-                Thread.sleep(100); 
+                Thread.sleep(300); 
 
                 Document doc = Jsoup.parse(driver.getPageSource());
                 
