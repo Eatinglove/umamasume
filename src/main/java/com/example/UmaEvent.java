@@ -35,9 +35,9 @@ public class UmaEvent {
             String line;
             while ((line = br.readLine()) != null) {
                 String fullUrl = URL_PREFIX + line;
-                //processCardEvent(driver, fullUrl);
-                processCardEvent(driver, "https://gametora.com/zh-tw/umamusume/characters/109001-verxina");
-                break;
+                processCardEvent(driver, fullUrl);
+                //processCardEvent(driver, "https://gametora.com/zh-tw/umamusume/characters/109001-verxina");
+                //break;
             }
         } catch (IOException e) {
             e.printStackTrace();
