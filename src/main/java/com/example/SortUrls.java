@@ -1,19 +1,25 @@
-//³o¬O³B²z¤ä´©¥dªººô§}¡A¥H«K¤§«áª¦ÂÎ¥Î
+//é€™æ˜¯è™•ç†æ”¯æ´å¡çš„ç¶²å€ï¼Œä»¥ä¾¿ä¹‹å¾Œçˆ¬èŸ²ç”¨
 package com.example;
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 public class SortUrls {
     public static void main(String[] args) {
         processAndSort(
-            "C:\\Users\\djes1\\Desktop\\uma\\href_supports.txt",
-            "C:\\Users\\djes1\\Desktop\\uma\\sortedhref_supports.txt"
+            "uma\\href_supports.txt",
+            "uma\\sortedhref_supports.txt"
         );
 
         processAndSort(
-            "C:\\Users\\djes1\\Desktop\\uma\\href_characters.txt",
-            "C:\\Users\\djes1\\Desktop\\uma\\sortedhref_characters.txt"
+            "uma\\href_characters.txt",
+            "uma\\sortedhref_characters.txt"
         );
     }
 
@@ -47,7 +53,7 @@ public class SortUrls {
             String lastPart = parts[parts.length - 1];
             return Integer.parseInt(lastPart.split("-")[0]);
         } catch (Exception e) {
-            return Integer.MAX_VALUE; // ±Æ³Ì«á¡AÁ×§K®æ¦¡¿ù»~¾É­P±Y¼ì
+            return Integer.MAX_VALUE; // æ’æœ€å¾Œï¼Œé¿å…æ ¼å¼éŒ¯èª¤å°è‡´å´©æ½°
         }
     }
 }

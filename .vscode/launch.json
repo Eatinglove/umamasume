@@ -2,6 +2,76 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "CardInfoSqlGenerator",
+      "request": "launch",
+      "mainClass": "com.example.CardInfoSqlGenerator",
+      "projectName": "JavaCrawler"
+    },
+    {
+      "type": "java",
+      "name": "CardEventSqlGenerator",
+      "request": "launch",
+      "mainClass": "com.example.CardEventSqlGenerator",
+      "projectName": "JavaCrawler"
+    },
+    {
+      "type": "java",
+      "name": "UmaEventSqlGenerator",
+      "request": "launch",
+      "mainClass": "com.example.UmaEventSqlGenerator",
+      "projectName": "JavaCrawler"
+    },
+    {
+      "type": "java",
+      "name": "UmaEventScraper",
+      "request": "launch",
+      "mainClass": "com.example.UmaEventScraper",
+      "projectName": "JavaCrawler"
+    },
+    {
+      "type": "java",
+      "name": "parse",
+      "request": "launch",
+      "mainClass": "com.example.parse",
+      "projectName": "JavaCrawler"
+    },
+    {
+      "type": "java",
+      "name": "SortUrls",
+      "request": "launch",
+      "mainClass": "com.example.SortUrls",
+      "projectName": "JavaCrawler"
+    },
+    {
+      "type": "java",
+      "name": "Gametora",
+      "request": "launch",
+      "mainClass": "com.example.Gametora",
+      "projectName": "JavaCrawler"
+    },
+    {
+      "type": "java",
+      "name": "UmaEvent",
+      "request": "launch",
+      "mainClass": "com.example.UmaEvent",
+      "projectName": "JavaCrawler"
+    },
+    {
+      "type": "java",
+      "name": "CardInfo",
+      "request": "launch",
+      "mainClass": "com.example.CardInfo",
+      "projectName": "JavaCrawler"
+    },
+    {
+      "type": "java",
+      "name": "CardEvent",
+      "request": "launch",
+      "mainClass": "com.example.CardEvent",
+      "projectName": "JavaCrawler"
+    },
+    {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",

@@ -1,5 +1,8 @@
-//¥ı¤Wgametora§âºô§}ª¦¤U¨Ó¡A¤§«á·|¦b³B²z
+//å…ˆä¸ŠgametoraæŠŠç¶²å€çˆ¬ä¸‹ä¾†ï¼Œä¹‹å¾Œæœƒåœ¨è™•ç†
 package com.example;
+
+import java.io.FileWriter;
+import java.io.IOException;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -8,16 +11,13 @@ import org.jsoup.select.Elements;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.io.FileWriter;
-import java.io.IOException;
-
 public class Gametora {
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\djes1\\Desktop\\uma\\chromedriver135.exe");
+        System.setProperty("webdriver.chrome.driver", "uma\\chromedriver.exe");
 
-        // ¤À§O³B²z¨â­Ó­¶­±
-        processPage("https://gametora.com/zh-tw/umamusume/supports", "C:\\Users\\djes1\\Desktop\\uma\\href_supports.txt", "div.sc-70f2d7f-0.dSgCQa");
-        processPage("https://gametora.com/zh-tw/umamusume/characters", "C:\\Users\\djes1\\Desktop\\uma\\href_characters.txt", "div.sc-70f2d7f-0.dSgCQa");
+        // åˆ†åˆ¥è™•ç†å…©å€‹é é¢
+        processPage("https://gametora.com/zh-tw/umamusume/supports", "uma\\href_supports.txt", "div.sc-70f2d7f-0.dSgCQa");
+        processPage("https://gametora.com/zh-tw/umamusume/characters", "uma\\href_characters.txt", "div.sc-70f2d7f-0.dSgCQa");
     }
 
     public static void processPage(String url, String outputPath, String targetDivClass) {
@@ -25,7 +25,7 @@ public class Gametora {
         driver.get(url);
 
         try {
-            Thread.sleep(5000); // µ¥«İ JS ¸ü¤J
+            Thread.sleep(5000); // ç­‰å¾… JS è¼‰å…¥
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -43,13 +43,13 @@ public class Gametora {
                 Elements links = div.select("a");
                 for (Element link : links) {
                     String href = link.attr("href");
-                    System.out.println("±q " + url + " §ì¨ì³sµ²: " + href);
+                    System.out.println("å¾ " + url + " æŠ“åˆ°é€£çµ: " + href);
                     writer.write(href + "\n");
                 }
             }
 
             writer.close();
-            System.out.println("¤w¼g¤JÀÉ®×: " + outputPath);
+            System.out.println("å·²å¯«å…¥æª”æ¡ˆ: " + outputPath);
 
         } catch (IOException e) {
             e.printStackTrace();

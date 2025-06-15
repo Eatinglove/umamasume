@@ -1,27 +1,36 @@
 package com.example;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.time.Duration;
+import java.util.List;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.*;
-
-import java.io.*;
-import java.time.Duration;
-import java.util.List;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CardInfo {
 
-    private static final String DRIVER_PATH = "C:\\Users\\djes1\\Desktop\\uma\\chromedriver135.exe";
-    private static final String OUTPUT_DIR = "C:\\Users\\djes1\\Desktop\\uma\\AllCardInfo";
+    private static final String DRIVER_PATH = "uma\\chromedriver.exe";
+    private static final String OUTPUT_DIR = "uma\\AllCardInfo";
     private static final String URL_PREFIX = "https://gametora.com";
 
     private static final StringBuilder cardEffect = new StringBuilder();
 
     public static void main(String[] args) {
-        String filePath = "C:\\Users\\djes1\\Desktop\\uma\\sortedhref_supports.txt"; 
+        String filePath = "uma\\sortedhref_supports.txt"; 
         System.setProperty("webdriver.chrome.driver", DRIVER_PATH);
         WebDriver driver = new ChromeDriver();
 
@@ -50,7 +59,7 @@ public class CardInfo {
         File file = new File(fileName);
 
         if (file.exists()) {
-            System.out.println("¤w¦s¦b¡A¸õ¹L¡G" + fileName);
+            System.out.println("exists , skippingï¼š" + fileName);
             return;
         }
 
@@ -99,7 +108,7 @@ public class CardInfo {
                 }
             }
         } catch (Exception e) {
-            System.out.println("³B²z " + url + " ®Éµo¥Í¿ù»~¡G" + e.getMessage());
+            System.out.println("Exception when dealing with link (" + url + "):" + e.getMessage());
         }
     }
 
@@ -121,10 +130,10 @@ public class CardInfo {
         String cardId = url.substring(url.lastIndexOf("/") + 1);
         String fileName = OUTPUT_DIR + "\\" + cardId + ".txt";
 
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
+        try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fileName), "UTF-8"))) {
             writer.write(cardEffect.toString());
         } catch (IOException e) {
-            System.out.println("¼g¤JÀÉ®×®É¿ù»~¡G" + e.getMessage());
+            System.out.println("Exception when writing into file: " + e.getMessage());
         } finally {
             cardEffect.setLength(0);
         }

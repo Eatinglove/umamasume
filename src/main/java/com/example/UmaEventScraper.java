@@ -1,5 +1,16 @@
 package com.example;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.time.Duration;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -33,10 +44,9 @@ public class UmaEventScraper {
             String line;
             while ((line = br.readLine()) != null) {
                 String fullUrl = URL_PREFIX + line;
-                processCardEvent(driver, fullUrl);
-                // 測試用，只處理一個頁面
-                // processCardEvent(driver, "https://gametora.com/zh-tw/umamusume/characters/100102-special-week");
-                // break;
+                //processCardEvent(driver, fullUrl);
+                processCardEvent(driver, "https://gametora.com/zh-tw/umamusume/supports/10127-air-messiah");
+                break;
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -60,13 +70,13 @@ public class UmaEventScraper {
 
             for (WebElement block : eventBlocks) {
                 String category = block.findElement(By.className("gvZhII")).getText();
-                writer.write("分類：" + category + "\n");
+                writer.write("???憿?:" + category + "\n");
 
                 List<WebElement> events = block.findElements(By.className("compatibility_viewer_item__SWULM"));
 
                 for (WebElement event : events) {
                     String eventName = event.getText();
-                    writer.write("  事件：" + eventName + "\n");
+                    writer.write("  鈭?隞?:" + eventName + "\n");
 
                     try {
                         event.click();
@@ -84,16 +94,16 @@ public class UmaEventScraper {
                                     List<WebElement> bonusDivs = cells.get(1).findElements(By.tagName("div"));
                                     StringBuilder effectText = new StringBuilder();
                                     for (WebElement bonusDiv : bonusDivs) {
-                                        effectText.append(bonusDiv.getText()).append(" ");
+                                        effectText.append(bonusDiv.getText()).append("||");
                                     }
-                                    writer.write("    " + option + " → " + effectText.toString().trim() + "\n");
+                                    writer.write("    " + option + "->" + "||" + effectText.toString().trim() + "\n");
                                 } else if (cells.size() == 1) {
                                     List<WebElement> bonusDivs = cells.get(0).findElements(By.tagName("div"));
                                     StringBuilder effectText = new StringBuilder();
                                     for (WebElement bonusDiv : bonusDivs) {
                                         effectText.append(bonusDiv.getText()).append(" ");
                                     }
-                                    writer.write("    效果：" + effectText.toString().trim() + "\n");
+                                    writer.write("    ??????" + effectText.toString().trim() + "\n");
                                 }
                             }
                         } else {
@@ -102,18 +112,19 @@ public class UmaEventScraper {
                                 List<WebElement> bonusDivs = cell.findElements(By.tagName("div"));
                                 StringBuilder effectText = new StringBuilder();
                                 for (WebElement bonusDiv : bonusDivs) {
-                                    effectText.append(bonusDiv.getText()).append(" ");
+                                    effectText.append(bonusDiv.getText()).append("||");
                                 }
-                                writer.write("    " + effectText.toString().trim() + "\n");
+                                writer.write("    " + "||" +effectText.toString().trim() + "\n");
                             }
                         }
                     } catch (Exception e) {
-                        writer.write("    無 tooltip 或展開失敗\n");
+                        writer.write("No tooltip available\n");
                     }
                 }
+                writer.write("--------------------\n");
             }
         } catch (Exception e) {
-            System.out.println("處理 " + url + " 時發生錯誤：" + e.getMessage());
+            System.out.println("Error occurred when processing url:" + url + " " + e.getMessage());
         }
     }
 }

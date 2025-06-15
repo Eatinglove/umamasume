@@ -1,25 +1,32 @@
 package com.example;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.*;
-
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.time.Duration;
 import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class UmaEvent {
 
     private static final String DRIVER_PATH = "C:\\Users\\djes1\\Desktop\\uma\\chromedriver137.exe";
     private static final String OUTPUT_DIR = "C:\\Users\\djes1\\Desktop\\uma\\AllUmaEvent";
     private static final String URL_PREFIX = "https://gametora.com";
-    private static final String FILE_PATH = "C:\\Users\\djes1\\Desktop\\uma\\sortedhref_characters.txt";
+    private static final String FILE_PATH = "uma\\sortedhref_characters.txt";
 
     public static void main(String[] args) {
+        System.out.println("\n///// Staring UmaEvent Processing /////\n");
         System.setProperty("webdriver.chrome.driver", DRIVER_PATH);
         WebDriver driver = new ChromeDriver();
 
@@ -45,81 +52,85 @@ public class UmaEvent {
     }
 
     private static void processCardEvent(WebDriver driver, String url) {
-        String cardId = url.substring(url.lastIndexOf("/") + 1);
-        String fileName = OUTPUT_DIR + "\\" + cardId + ".txt";
-        File file = new File(fileName);
-        int count=0;
-        int fat=0;
-
-        /*if(file.exists()){
-            return;
-        }*/
-
         try {
             driver.get(url);
+            Thread.sleep(3000);
+            BufferedWriter writer = new BufferedWriter(new FileWriter("events.txt"));
 
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            wait.until(ExpectedConditions.presenceOfElementLocated(By.className("compatibility_viewer_item__SWULM")));
+            List<WebElement> eventBlocks = driver.findElements(By.className("eventhelper_elist__A0Bud"));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
-            StringBuilder cardEvent = new StringBuilder();
+            for (WebElement block : eventBlocks) {
+                String category = block.findElement(By.className("gvZhII")).getText();
+                writer.write("???憿?嚗?" + category);
+                writer.newLine();
 
-            List<WebElement> items = driver.findElements(By.className("compatibility_viewer_item__SWULM"));
-            for (WebElement item : items) {
-                try {
-                    item.click();
-                    Thread.sleep(500); 
+                List<WebElement> events = block.findElements(By.className("compatibility_viewer_item__SWULM"));
 
-                    Document doc = Jsoup.parse(driver.getPageSource());
+                for (WebElement event : events) {
+                    String eventName = event.getText();
+                    writer.write("  鈭?隞塚??" + eventName);
+                    writer.newLine();
 
-                    Elements events = doc.select("td.tooltips_ttable_cell___3NMF, div.tooltips_ttable_cell___3NMF, div.tooltips_ttable_heading__jlJcE");
+                    try {
+                        event.click();
+                        wait.until(ExpectedConditions.attributeToBe(event, "aria-expanded", "true"));
+                        Thread.sleep(300);
 
-                    for (Element event : events) {
-                        if(count==0){
-                            cardEvent.append("決勝服事件\n------------------\n");
+                        WebElement tooltip = driver.findElement(By.className("tooltips_tooltip__iWtqn"));
+
+                        List<WebElement> rows = tooltip.findElements(By.className("tooltips_ttable_row__T8N69"));
+                        if (rows.size() > 0) {
+                            for (WebElement row : rows) {
+                                List<WebElement> cells = row.findElements(By.className("tooltips_ttable_cell___3NMF"));
+                                if (cells.size() >= 2) {
+                                    String option = cells.get(0).getText();
+                                    List<WebElement> bonusDivs = cells.get(1).findElements(By.tagName("div"));
+                                    StringBuilder effectText = new StringBuilder();
+                                    for (WebElement bonusDiv : bonusDivs) {
+                                        effectText.append(bonusDiv.getText()).append(" ");
+                                    }
+                                    writer.write("    " + option + " ??? " + effectText.toString().trim());
+                                    writer.newLine();
+                                } else if (cells.size() == 1) {
+                                    List<WebElement> bonusDivs = cells.get(0).findElements(By.tagName("div"));
+                                    StringBuilder effectText = new StringBuilder();
+                                    for (WebElement bonusDiv : bonusDivs) {
+                                        effectText.append(bonusDiv.getText()).append(" ");
+                                    }
+                                    writer.write("    ??????嚗?" + effectText.toString().trim());
+                                    writer.newLine();
+                                }
+                            }
+                        } else {
+                            List<WebElement> singleCells = tooltip.findElements(By.className("tooltips_ttable_cell___3NMF"));
+                            for (WebElement cell : singleCells) {
+                                List<WebElement> bonusDivs = cell.findElements(By.tagName("div"));
+                                StringBuilder effectText = new StringBuilder();
+                                for (WebElement bonusDiv : bonusDivs) {
+                                    effectText.append(bonusDiv.getText()).append(" ");
+                                }
+                                writer.write("    " + effectText.toString().trim());
+                                writer.newLine();
+                            }
                         }
-                        String text = event.text();
-                        String className = event.className();
-                        
-                        
-                        if(className.equals("tooltips_ttable_heading__jlJcE")){
-                            //System.out.println(className);
-                            count++;
-                        }
-                        if(count==4){
-                            cardEvent.append("有選項的事件\n-----------------\n");
-                            count++;
-                        }
-                        cardEvent.append(text).append("\n");
-                        if(text.contains("獲得 體重過胖 狀態")){
-                            //System.out.println("fat lol");
-                            cardEvent.append("------------------\n外出事件\n");
-                            fat++;
-                        }
-                        if(fat==5){
-                            cardEvent.append("------------------\n沒有選項的事件\n");
-                            fat++;
-                        }
-                        if(text.contains("下選項")&&fat>0){
-                            //System.out.println(text);
-                            fat++;
-                        }
-                        
-                        //System.out.println(text);
-                    }
-
-                    cardEvent.append("-------------------------\n");
 
                 } catch (Exception e) {
-                    System.out.println("failuwu" + e.getMessage());
+                    writer.write("    ??? tooltip ???撅????憭望??");
+                    writer.newLine();
                 }
             }
+        }
 
-            saveToFile(cardId, cardEvent.toString());
-
+        writer.close();
+        driver.quit();
         } catch (Exception e) {
-            System.out.println("處理 " + url + " 時發生錯誤：" + e.getMessage());
+            System.out.println("??????鈭?隞嗆????潛????航炊嚗?" + e.getMessage());
+            e.printStackTrace();
         }
     }
+
+
 
     private static void saveToFile(String cardId, String content) {
         File folder = new File(OUTPUT_DIR);
@@ -129,10 +140,10 @@ public class UmaEvent {
 
         String fileName = OUTPUT_DIR + "\\" + cardId + ".txt";
 
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
+        try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fileName), "UTF-8"))) {
             writer.write(content);
         } catch (IOException e) {
-            System.out.println("寫入檔案時錯誤：" + e.getMessage());
+            System.out.println("撖怠?交??獢??????航炊嚗?" + e.getMessage());
         }
     }
 }
