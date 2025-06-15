@@ -14,7 +14,7 @@ import java.util.List;
 
 public class UmaEvent {
 
-    private static final String DRIVER_PATH = "C:\\Users\\djes1\\Desktop\\uma\\chromedriver135.exe";
+    private static final String DRIVER_PATH = "C:\\Users\\djes1\\Desktop\\uma\\chromedriver137.exe";
     private static final String OUTPUT_DIR = "C:\\Users\\djes1\\Desktop\\uma\\AllUmaEvent";
     private static final String URL_PREFIX = "https://gametora.com";
     private static final String FILE_PATH = "C:\\Users\\djes1\\Desktop\\uma\\sortedhref_characters.txt";
@@ -35,9 +35,9 @@ public class UmaEvent {
             String line;
             while ((line = br.readLine()) != null) {
                 String fullUrl = URL_PREFIX + line;
-                processCardEvent(driver, fullUrl);
-                //processCardEvent(driver, "https://gametora.com/zh-tw/umamusume/characters/109001-verxina");
-                //break;
+                //processCardEvent(driver, fullUrl);
+                processCardEvent(driver, "https://gametora.com/zh-tw/umamusume/characters/100802-vodka");
+                break;
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -50,8 +50,10 @@ public class UmaEvent {
         File file = new File(fileName);
         int count=0;
         int fat=0;
-        int flag=0;
-//if exist skip
+
+        /*if(file.exists()){
+            return;
+        }*/
 
         try {
             driver.get(url);

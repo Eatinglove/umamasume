@@ -1,93 +1,4 @@
-/*package com.example;
-
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.JavascriptExecutor;
-
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.List;
-
-public class CardEvent {
-
-    public static void main(String[] args) {
-        String filePath = "C:\\Users\\djes1\\Desktop\\uma\\sortedhref.txt"; 
-
-        //readEvent(filePath);
-        processLineEvent("https://gametora.com/zh-tw/umamusume/supports/30028-kitasan-black");
-    }
-
-    private static void readEvent(String filePath){
-    
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                processLineEvent("https://gametora.com"+line);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private static void processLineEvent(String url){
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\djes1\\Desktop\\uma\\chromedriver135.exe");
-        WebDriver driver = new ChromeDriver(); 
-        try{
-            driver.get(url);
-            Thread.sleep(1000);
-            writeEvent(driver);
-        }
-        catch(Exception e){
-            System.out.println(url+" 錯誤 " + e.getMessage());
-        }
-        finally{
-            driver.quit();
-        }
-    }
-    //private static StringBuilder cardEvent = new StringBuilder();
-    private static void writeEvent(WebDriver webdriver) {
-        JavascriptExecutor js = (JavascriptExecutor) webdriver;
-        StringBuilder cardEvent = new StringBuilder();
-    
-        // 找到所有 class="compatibility_viewer_item__SWULM" 的元素
-        List<WebElement> items = webdriver.findElements(By.className("compatibility_viewer_item__SWULM"));
-        int i=0;
-        for (WebElement item : items) {
-            try {
-                // 點擊該元素，觸發 aria-expanded 變更
-                item.click();
-                Thread.sleep(1000); // 等待變化生效
-                
-                // 獲取當前的 HTML
-                Document doc = Jsoup.parse(webdriver.getPageSource());
-    
-                // 讀取 class="tooltips_ttable_cell__3NMF" 的內容
-                Elements events = doc.select("div.tooltips_ttable_cell___3NMF, td.tooltips_ttable_cell___3NMF");
-
-                for (Element event : events) {
-                    cardEvent.append(event.text()).append("\n");
-                }
-                cardEvent.append("-------------------------\n");
-    
-            } catch (Exception e) {
-                System.out.println("處理事件時發生錯誤：" + e.getMessage());
-            }
-        }
-    
-        // 輸出所有讀取的內容
-        System.out.println(cardEvent.toString());
-    }
-    
-}*/
+/* 
 package com.example;
 
 import org.jsoup.Jsoup;
@@ -135,9 +46,14 @@ public class CardEvent {
             e.printStackTrace();
         }
     }
-private static void processCardEvent(WebDriver driver, String url) {
+    private static void processCardEvent(WebDriver driver, String url) {
     String cardId = url.substring(url.lastIndexOf("/") + 1);
-
+    String fileName = OUTPUT_DIR + "\\" + cardId + ".txt";
+    File file = new File(fileName);
+    if(file.exists()){
+        System.out.println(fileName + "Exist");
+        return;
+    }
     try {
         driver.get(url);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -202,3 +118,139 @@ private static void processCardEvent(WebDriver driver, String url) {
         }
     }
 }
+*/
+package com.example;
+
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.*;
+
+import java.io.*;
+import java.time.Duration;
+import java.util.List;
+
+public class CardEvent {
+
+    private static final String DRIVER_PATH = "C:\\Users\\djes1\\Desktop\\uma\\chromedriver137.exe";
+    private static final String OUTPUT_DIR = "C:\\Users\\djes1\\Desktop\\uma\\AllCardEvent";
+    private static final String URL_PREFIX = "https://gametora.com";
+    private static final String FILE_PATH = "C:\\Users\\djes1\\Desktop\\uma\\sortedhref_supports.txt";
+
+    public static void main(String[] args) {
+        System.setProperty("webdriver.chrome.driver", DRIVER_PATH);
+        WebDriver driver = new ChromeDriver();
+
+        try {
+            readEventFile(FILE_PATH, driver);
+        } finally {
+            driver.quit();
+        }
+    }
+
+    private static void readEventFile(String filePath, WebDriver driver) {
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String fullUrl = URL_PREFIX + line;
+                //processCardEvent(driver, fullUrl);
+                processCardEvent(driver, "https://gametora.com/zh-tw/umamusume/supports/10127-air-messiah");break;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void processCardEvent(WebDriver driver, String url) {
+        String cardId = url.substring(url.lastIndexOf("/") + 1);
+        File folder = new File(OUTPUT_DIR);
+        if (!folder.exists()) {
+            folder.mkdirs();
+        }
+        String filePath = OUTPUT_DIR + "\\" + cardId + ".txt";
+
+        File output = new File(filePath);
+        /*if (output.exists()) {
+            System.out.println(filePath + " 已存在");
+            return;
+        }*/
+
+        try (Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filePath), "big5"))) {
+            driver.get(url);
+            Thread.sleep(3000);
+
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            List<WebElement> eventBlocks = driver.findElements(By.className("eventhelper_elist__A0Bud"));
+
+            for (WebElement block : eventBlocks) {
+                String category = block.findElement(By.className("gvZhII")).getText();
+                writer.write("分類：" + category + "\n");
+
+                List<WebElement> events = block.findElements(By.className("compatibility_viewer_item__SWULM"));
+
+                for (WebElement event : events) {
+                    String eventName = event.getText();
+                    writer.write("  事件：" + eventName + "\n");
+
+                    try {
+                        event.click();
+                        wait.until(ExpectedConditions.attributeToBe(event, "aria-expanded", "true"));
+                        Thread.sleep(300);
+
+                        WebElement tooltip = driver.findElement(By.className("tooltips_tooltip__iWtqn"));
+                        List<WebElement> rows = tooltip.findElements(By.className("tooltips_ttable_row__T8N69"));
+
+                        if (rows.size() > 0) {
+                            for (WebElement row : rows) {
+                                List<WebElement> cells = row.findElements(By.className("tooltips_ttable_cell___3NMF"));
+                                if (cells.size() >= 2) {
+                                    String option = cells.get(0).getText();
+                                    List<WebElement> bonusDivs = cells.get(1).findElements(By.tagName("div"));
+                                    StringBuilder effectText = new StringBuilder();
+                                    effectText.append("||"); // 開頭加 ||
+                                    for (WebElement bonusDiv : bonusDivs) {
+                                        String bonus = bonusDiv.getText().trim();
+                                        if (!bonus.isEmpty()) {
+                                            effectText.append(bonus).append("||");
+                                        }
+                                    }
+                                    writer.write("    " + option + " → " + effectText.toString() + "\n");
+                                } else if (cells.size() == 1) {
+                                    List<WebElement> bonusDivs = cells.get(0).findElements(By.tagName("div"));
+                                    StringBuilder effectText = new StringBuilder();
+                                    effectText.append("||");
+                                    for (WebElement bonusDiv : bonusDivs) {
+                                        String bonus = bonusDiv.getText().trim();
+                                        if (!bonus.isEmpty()) {
+                                            effectText.append(bonus).append("||");
+                                        }
+                                    }
+                                    writer.write("    效果：" + effectText.toString() + "\n");
+                                }
+                            }
+                        } else {
+                            List<WebElement> singleCells = tooltip.findElements(By.className("tooltips_ttable_cell___3NMF"));
+                            for (WebElement cell : singleCells) {
+                                List<WebElement> bonusDivs = cell.findElements(By.tagName("div"));
+                                StringBuilder effectText = new StringBuilder();
+                                effectText.append("||");
+                                for (WebElement bonusDiv : bonusDivs) {
+                                    String bonus = bonusDiv.getText().trim();
+                                    if (!bonus.isEmpty()) {
+                                        effectText.append(bonus).append("||");
+                                    }
+                                }
+                                writer.write("    " + effectText.toString() + "\n");
+                            }
+                        }
+                    } catch (Exception e) {
+                        writer.write("    無 tooltip 或展開失敗\n");
+                    }
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("處理 " + url + " 時發生錯誤：" + e.getMessage());
+        }
+    }
+}
+
+
