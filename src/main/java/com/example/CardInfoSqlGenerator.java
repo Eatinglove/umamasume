@@ -10,18 +10,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CardInfoSqlGenerator {
-    static int eventId = 1, choiceId = 1, effectId = 1;
+    static int card_id = 1;
 
     static class Card_info {
+        Integer card_info_id;
+        Integer uma_id;
+        String uma_name;
         String level_name;
+
         Integer friend_bonus;
         Integer motivation_bonus;
+        Integer appear_rate_bonus;
         Integer initial_favor_gauge;
-        Integer initial_stat_gauge;
-        String initial_stat_gauge_type;
-        Integer stat_enhancement;
-        String stat_enhancement_type;
-        Integer powerBonus;
+        Integer initial_speed_gauge;
+        Integer initial_stamina_gauge;
+        Integer initial_strength_gauge;
+        Integer initial_willpower_gauge;
+        Integer initial_intelligence_gauge;
+        Integer speed_enhancement;
+        Integer stamina_enhancement;
+        Integer strength_enhancement;
+        Integer willpower_enhancement;
+        Integer intelligence_enhancement;
+        Integer skill_point_enhancement;
+        Integer intelligence_hp_recovery;
+        Integer training_bonus;
+        Integer failure_rate_bonus;
     }
 
 
@@ -44,192 +58,111 @@ public class CardInfoSqlGenerator {
 
     private static void writeSchema(BufferedWriter writer) throws IOException {
         writer.write(
-            "CREATE TABLE card_table (\n" +
-            "    count INTEGER PRIMARY KEY,\n" +
-            "    uma_id INTEGER PRIMARY KEY,\n" +
+            "CREATE TABLE card_info (\n" +
+            "    card_info_id INTEGER PRIMARY KEY,\n" +
+            "    uma_id INTEGER,\n" +
             "    uma_name TEXT,\n" +
-            ");\n" +
-            "CREATE TABLE card_events (\n" +
-            "    event_id INTEGER PRIMARY KEY,\n" +
-            "    event_name TEXT,\n" +
-            "    uma_id INTEGER PRIMARY KEY,\n" +
-            "    uma_name TEXT,\n" +
-            "    category TEXT,\n" +
-            ");\n" +
-            "CREATE TABLE card_event_choices (\n" +
-            "    choice_id INTEGER PRIMARY KEY,\n" +
-            "    event_id INTEGER,\n" +
-            "    choice_label TEXT,\n" +
-            "    chain_index INTEGER,\n" +
-            "    speed INTEGER,\n" +
-            "    stamina INTEGER,\n" +
-            "    strength INTEGER,\n" +
-            "    willpower INTEGER,\n" +
-            "    intelligence INTEGER,\n" +
-            "    hp INTEGER,\n" +
-            "    mood INTEGER,\n" +
-            "    skill_point INTEGER,\n" +
-            "    character_favor INTEGER,\n" +
-            "    condition TEXT,\n" +
-            "    is_random_value BOOLEAN,\n" +
-            "    is_random_attribute BOOLEAN,\n" +
-            "    is_random_block_training BOOLEAN,\n" +
-            "    is_end_chained_event BOOLEAN\n" +
-            ");\n"  
+            "    level_name TEXT,\n" +
+            "    friend_bonus INTEGER,\n" +
+            "    motivation_bonus INTEGER,\n" +
+            "    appear_rate_bonus INTEGER,\n" +
+            "    initial_favor_gauge INTEGER,\n" +
+            "    initial_speed_gauge INTEGER,\n" +
+            "    initial_stamina_gauge INTEGER,\n" +
+            "    initial_strength_gauge INTEGER,\n" +
+            "    initial_willpower_gauge INTEGER,\n" +
+            "    initial_intelligence_gauge INTEGER,\n" +
+            "    speed_enhancement INTEGER,\n" +
+            "    stamina_enhancement INTEGER,\n" +
+            "    strength_enhancement INTEGER,\n" +
+            "    willpower_enhancement INTEGER,\n" +
+            "    intelligence_enhancement INTEGER,\n" +
+            "    skill_point_enhancement INTEGER,\n" +
+            "    intelligence_hp_recovery INTEGER,\n" +
+            "    training_bonus INTEGER,\n" +
+            "    failure_rate_bonus INTEGER\n" +
+            ");\n"
         );
         writer.newLine();
     }
 
     private static void processFile(File file, BufferedWriter writer) throws IOException {
         List<String> lines = Files.readAllLines(file.toPath());
-        String category = null;
-        Event currentEvent = null;
+        Card_info currentInfo = card_init();
+        currentInfo.card_info_id = card_id;
         Integer uma_id = null;
         String uma_name = null;
-        Integer chained = 0;
+        String level_name = null;
 
         String[] names = file.getName().split("-", 2);
         uma_id = Integer.parseInt(names[0].trim());
         uma_name = names[1].replace(".txt", "").trim();
+        currentInfo.uma_id = uma_id;
+        currentInfo.uma_name = uma_name;
 
         for (String line : lines) {
             line = line.trim();
-            // 分類處理
-            if (line.startsWith("分類:")) {
-                category = line.substring(3).trim();
+            // 等級處理
+            if (line.startsWith("==")) {
+                currentInfo.level_name = line.replaceAll("==", "").trim();
 
-            // 事件處理
-            } else if (line.startsWith("事件:")) {
-                if (currentEvent != null) {
-                    writeEventSQL(currentEvent, writer);
-                    currentEvent = null; // 重置當前事件
-                }
-                currentEvent = new Event();
-                currentEvent.event_name = line.substring(3).trim();
-                currentEvent.uma_id = uma_id;
-                currentEvent.uma_name = uma_name;
-                currentEvent.category = category;
-                
-                if (line.contains("❯")) {
-                    chained += 1; // 如果有鏈接，增加鏈接計數
-                }
             //skip分隔線
-            } else if (line.contains("--------------------")) {
-            
+            } else if (line.contains("-----------------------")) {
+                write_CardInfo(currentInfo, writer);
+                currentInfo = card_init();
+                currentInfo.card_info_id = card_id;
+                currentInfo.uma_id = uma_id;
+                currentInfo.uma_name = uma_name;
+                currentInfo.level_name = null;
+
             // 處理選項
             } else {
-                Choice choice = new Choice();
-                choice.event_id = eventId;
-                
-                choice.speed = 0;
-                choice.stamina = 0;
-                choice.strength = 0;
-                choice.willpower = 0;
-                choice.intelligence = 0;
-                choice.hp = 0;
-                choice.mood = 0;
-                choice.skill_point = 0;
-                choice.character_favor = 0;
-                choice.is_random_value = false;
-                choice.is_random_attribute = false;
-                choice.is_random_block_training = false;
-                if (line.contains("上選項")) {
-                    choice.choice_label = "Up";
-                } else if (line.contains("下選項")) {
-                    choice.choice_label = "Down";
-                } else if (line.contains("中間選項")) {
-                    choice.choice_label = "Middle";
-                } else {
-                    choice.choice_label = "None";
+                System.out.println("處理效果: " + card_id + "-" + uma_name + " - " + line);
+
+                if (line.contains("友情加成")) {
+                    currentInfo.friend_bonus += Integer.valueOf(line.replaceAll("[^0-9+-]", ""));
+                } else if (line.contains("幹勁效果提升")) {
+                    currentInfo.motivation_bonus += Integer.valueOf(line.replaceAll("[^0-9+-]", ""));
+                } else if (line.contains("擅長率提升")) {
+                    currentInfo.appear_rate_bonus += Integer.valueOf(line.replaceAll("[^0-9+-]", ""));
+                } else if (line.contains("初期情誼量條")) {
+                    currentInfo.initial_favor_gauge += Integer.valueOf(line.replaceAll("[^0-9+-]", ""));
+                } else if (line.contains("初期速度")) {
+                    currentInfo.initial_speed_gauge += Integer.valueOf(line.replaceAll("[^0-9+-]", ""));
+                } else if (line.contains("初期持久力")) {
+                    currentInfo.initial_stamina_gauge += Integer.valueOf(line.replaceAll("[^0-9+-]", ""));
+                } else if (line.contains("初期力量")) {
+                    currentInfo.initial_strength_gauge += Integer.valueOf(line.replaceAll("[^0-9+-]", ""));
+                } else if (line.contains("初期意志力")) {
+                    currentInfo.initial_willpower_gauge += Integer.valueOf(line.replaceAll("[^0-9+-]", ""));
+                } else if (line.contains("初期智力")) {
+                    currentInfo.initial_intelligence_gauge += Integer.valueOf(line.replaceAll("[^0-9+-]", ""));
+                } else if (line.contains("速度加成")) {
+                    currentInfo.speed_enhancement += Integer.valueOf(line.replaceAll("[^0-9+-]", ""));
+                } else if (line.contains("耐力加成")) {
+                    currentInfo.stamina_enhancement += Integer.valueOf(line.replaceAll("[^0-9+-]", ""));
+                } else if (line.contains("力量加成")) {
+                    currentInfo.strength_enhancement += Integer.valueOf(line.replaceAll("[^0-9+-]", ""));
+                } else if (line.contains("意志加成")) {
+                    currentInfo.willpower_enhancement += Integer.valueOf(line.replaceAll("[^0-9+-]", ""));
+                } else if (line.contains("智力加成")) {
+                    currentInfo.intelligence_enhancement += Integer.valueOf(line.replaceAll("[^0-9+-]", ""));
+                } else if (line.contains("技能點數加成")) {
+                    currentInfo.skill_point_enhancement += Integer.valueOf(line.replaceAll("[^0-9+-]", ""));
+                } else if (line.contains("智力友情回復量")) {
+                    currentInfo.intelligence_hp_recovery += Integer.valueOf(line.replaceAll("[^0-9+-]", ""));
+                } else if (line.contains("訓練效果提升")) {
+                    currentInfo.training_bonus += Integer.valueOf(line.replaceAll("[^0-9+-]", ""));
+                } else if (line.contains("失敗率下降")) {
+                    currentInfo.failure_rate_bonus += Integer.valueOf(line.replaceAll("[^0-9+-]", ""));
                 }
-
-                if (chained != 0) {
-                    choice.chain_index = chained;
-                } else {
-                    choice.chain_index = 0;
-                }
-
-                List<String> effects = new ArrayList<String>();
-                effects = parseEffects(line.trim());
-                
-                for (String effect : effects) {
-                    System.out.println("處理效果: " + uma_id + "-" + uma_name + " - " + currentEvent.event_name + " - " + effect);
-
-                    if (effect.contains("會隨機在")) {
-                        choice.is_random_value = true;
-                    }
-                    if (effect.contains("(隨機)")) {
-                        choice.is_random_attribute = true;
-                    }
-
-                    if (effect.contains("速度")) {
-                        choice.speed += Integer.valueOf(effect.replaceAll("[^0-9+-]", ""));
-                    } else if (effect.contains("持久力")) {
-                        choice.stamina += Integer.valueOf(effect.replaceAll("[^0-9+-]", ""));
-                    } else if (effect.contains("力量")) {
-                        choice.strength += Integer.valueOf(effect.replaceAll("[^0-9+-]", ""));
-                    } else if (effect.contains("智力")) {
-                        choice.intelligence += Integer.valueOf(effect.replaceAll("[^0-9+-]", ""));
-                    } else if (effect.contains("意志力")) {
-                        choice.willpower += Integer.valueOf(effect.replaceAll("[^0-9+-]", ""));
-                    } else if (effect.contains("完全恢復體力")) {
-                        choice.hp = 9999;
-                    } else if (effect.contains("體力")) {
-                        choice.hp += Integer.valueOf(effect.replaceAll("[^0-9+-]", ""));
-                    } else if (effect.contains("幹勁")) {
-                        choice.mood += Integer.valueOf(effect.replaceAll("[^0-9+-]", ""));
-                    } else if (effect.contains("好感度")) {
-                        choice.character_favor += Integer.valueOf(effect.replaceAll("[^0-9+-]", ""));
-                    } else if (effect.contains("所有屬性")) {
-                        choice.speed += Integer.valueOf(effect.replaceAll("[^0-9+-]", ""));
-                        choice.stamina += Integer.valueOf(effect.replaceAll("[^0-9+-]", ""));
-                        choice.strength += Integer.valueOf(effect.replaceAll("[^0-9+-]", ""));
-                        choice.intelligence += Integer.valueOf(effect.replaceAll("[^0-9+-]", ""));
-                        choice.willpower += Integer.valueOf(effect.replaceAll("[^0-9+-]", ""));
-                    } else if (effect.contains("技能靈感")) {
-                        
-                    } else if (effect.contains("狀態")) {
-                        choice.condition = effect.replace("獲得", "").replace("狀態", "").trim();
-                    } else if (effect.contains("Pt")) {
-                        choice.skill_point = Integer.valueOf(effect.replaceAll("[^0-9+-]", ""));
-                    } else if (effect.contains("在下一回合，會禁用 4 種隨機的訓練類型")) {
-                        choice.is_random_block_training = true;
-                    } else if (effect.contains("連鎖活動已結束")) {
-                        choice.is_end_chained_event = true;
-                    } else if (effect.contains("或")){
-                        String temp = choice.choice_label;
-                        currentEvent.choices.add(choice);
-                        choice = new Choice();
-                        choice.event_id = eventId;
-                        choice.speed = 0;
-                        choice.stamina = 0;
-                        choice.strength = 0;
-                        choice.willpower = 0;
-                        choice.intelligence = 0;
-                        choice.hp = 0;
-                        choice.mood = 0;
-                        choice.skill_point = 0;
-                        choice.character_favor = 0;
-                        choice.is_random_value = false;
-                        choice.is_random_attribute = false;
-                        choice.is_random_block_training = false;
-
-                        if (chained != 0) {
-                            choice.chain_index = chained;
-                        } else {
-                            choice.chain_index = 0;
-                        }
-                        choice.choice_label = temp;
-                    }
-                }
-                currentEvent.choices.add(choice);
             }
         }
-        if (currentEvent != null) writeEventSQL(currentEvent, writer);
-        
     }
+        
+    
 
-    private static List<String> parseEffects(String raw) {
+    private static List<String> parselines(String raw) {
         String[] parts = raw.split("\\|\\|");
         List<String> results = new ArrayList<>();
         for (String part : parts) {
@@ -238,18 +171,49 @@ public class CardInfoSqlGenerator {
         return results;
     }
 
-    private static void writeEventSQL(Event event, BufferedWriter writer) throws IOException {
-        writer.write(String.format("INSERT INTO card_events (event_id, event_name, uma_id, uma_name, category) VALUES (%d, '%s', %d, '%s', '%s');\n",
-                eventId, escape(event.event_name), event.uma_id,escape(event.uma_name), escape(event.category)));
-        for (Choice choice : event.choices) {
-            writer.write(String.format("INSERT INTO card_event_choices (choice_id, event_id, choice_label, chained_index, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, character_favor, condition, is_random_value, is_random_attribute, is_random_block_training, is_end_chained_event) VALUES (%d, %d, %s, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %s, %d, %d, %d, %d);\n",
-                choiceId, eventId, choice.choice_label == null ? "NULL" : escape(choice.choice_label), choice.chain_index, choice.speed, choice.stamina, choice.strength,
-                choice.willpower, choice.intelligence, choice.hp, choice.mood, choice.skill_point,
-                choice.character_favor, choice.condition == null ? "NULL" : escape(choice.condition), choice.is_random_value ? 1 : 0,
-                choice.is_random_attribute ? 1 : 0, choice.is_random_block_training ? 1 : 0, choice.is_end_chained_event ? 1 : 0));
-            choiceId++;
-        }
-        eventId++;
+    private static Card_info card_init(){
+        Card_info currentInfo = new Card_info();
+        currentInfo.card_info_id = null;
+        currentInfo.uma_name = null;
+        currentInfo.level_name = null;
+
+        currentInfo.friend_bonus = 0;
+        currentInfo.motivation_bonus = 0;
+        currentInfo.appear_rate_bonus = 0;
+        currentInfo.initial_favor_gauge = 0;
+        currentInfo.initial_speed_gauge = 0;
+        currentInfo.initial_stamina_gauge = 0;
+        currentInfo.initial_strength_gauge = 0;
+        currentInfo.initial_willpower_gauge = 0;
+        currentInfo.initial_intelligence_gauge = 0;
+        currentInfo.speed_enhancement = 0;
+        currentInfo.stamina_enhancement = 0;
+        currentInfo.strength_enhancement = 0;
+        currentInfo.willpower_enhancement = 0;
+        currentInfo.intelligence_enhancement = 0;
+        currentInfo.skill_point_enhancement = 0;
+        currentInfo.intelligence_hp_recovery = 0;
+        currentInfo.training_bonus = 0;
+        currentInfo.failure_rate_bonus = 0;
+
+        return currentInfo;
+    }
+
+    private static void write_CardInfo(Card_info currentInfo, BufferedWriter writer) throws IOException {
+        writer.write(String.format("INSERT INTO card_info (card_info_id, uma_id, uma_name, level_name, friend_bonus, motivation_bonus, "+
+        "appear_rate_bonus, initial_favor_bonus, initial_speed_bonus, initial_stamina_bonus, initial_strength_bonus, initial_willpower_bonus, "+
+        "initial_intelligence_bonus, speed_enhancement, stamina_enhancement, strength_enhancement, willpower_enhancement, intelligence_enhancement, skill_point_enhancement"+
+        "intelligence_hp_recovery, training_bonus, failure_rate_bonus) VALUES (%d, %d, '%s', '%s', %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d);\n",
+            currentInfo.card_info_id, currentInfo.uma_id, currentInfo.uma_name == null ? "NULL" : escape(currentInfo.uma_name), currentInfo.level_name == null ? "NULL" : escape(currentInfo.level_name),
+            currentInfo.friend_bonus, currentInfo.motivation_bonus, currentInfo.appear_rate_bonus, currentInfo.initial_favor_gauge,
+            currentInfo.initial_speed_gauge, currentInfo.initial_stamina_gauge, currentInfo.initial_strength_gauge, 
+            currentInfo.initial_willpower_gauge, currentInfo.initial_intelligence_gauge, currentInfo.speed_enhancement,
+            currentInfo.stamina_enhancement, currentInfo.strength_enhancement, currentInfo.willpower_enhancement,
+            currentInfo.intelligence_enhancement, currentInfo.skill_point_enhancement, currentInfo.intelligence_hp_recovery,
+            currentInfo.training_bonus, currentInfo.failure_rate_bonus));
+        
+        card_id++;
+        writer.newLine();
     }
 
     private static String escape(String s) {

@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CardInfoSqlGenerator",
+      "request": "launch",
+      "mainClass": "com.example.CardInfoSqlGenerator",
+      "projectName": "JavaCrawler"
+    },
+    {
+      "type": "java",
       "name": "CardEventSqlGenerator",
       "request": "launch",
       "mainClass": "com.example.CardEventSqlGenerator",

@@ -1,12 +1,12 @@
 CREATE TABLE uma_table (
     count INTEGER PRIMARY KEY,
-    uma_id INTEGER PRIMARY KEY,
+    uma_id INTEGER,
     uma_name TEXT,
 );
 CREATE TABLE events (
     event_id INTEGER PRIMARY KEY,
     event_name TEXT,
-    uma_id INTEGER PRIMARY KEY,
+    uma_id INTEGER,
     uma_name TEXT,
     category TEXT,
 );
@@ -28,6 +28,7 @@ CREATE TABLE event_choices (
     is_random_block_training BOOLEAN
 );
 
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (1, 100101, 'special-week');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1, '要擺什麼姿勢好呢？', 100101, 'special-week', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1, 1, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2, 1, Down, 0, 0, 0, 0, 0, 0, 0, 40, NULL, 0, 0, 0);
@@ -99,6 +100,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (26, '懷念那遙遠之地', 100101, 'special-week', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (44, 26, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (45, 26, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (2, 100102, 'special-week');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (27, '爆開的泳裝之力！', 100102, 'special-week', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (46, 27, Up, 10, 0, 0, 0, 0, 0, 0, 15, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (47, 27, Down, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
@@ -170,6 +172,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (52, '懷念那遙遠之地', 100102, 'special-week', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (89, 52, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (90, 52, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (3, 100103, 'special-week');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (53, '至今為止與從今以後', 100103, 'special-week', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (91, 53, None, 0, 0, 5, 0, 0, 0, 0, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (92, 53, None, 0, 0, 10, 0, 0, 0, 0, 0, NULL, 1, 0, 0);
@@ -241,6 +244,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (78, '懷念那遙遠之地', 100103, 'special-week', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (134, 78, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (135, 78, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (4, 100201, 'silence-suzuka');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (79, 'Landscape color', 100201, 'silence-suzuka', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (136, 79, Up, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (137, 79, Down, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -310,6 +314,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (105, '打瞌睡逃避', 100201, 'silence-suzuka', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (176, 105, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (177, 105, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (5, 100202, 'silence-suzuka');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (106, '淹沒在海潮聲中', 100202, 'silence-suzuka', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (178, 106, Up, 0, 0, 0, 0, 0, 10, 0, 0, (隨機)  討人喜歡○, 0, 1, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (179, 106, Down, 0, 0, 0, 10, 0, 0, 0, 0, (隨機)  討人喜歡○, 0, 1, 0);
@@ -378,6 +383,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (132, '打瞌睡逃避', 100202, 'silence-suzuka', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (217, 132, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (218, 132, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (6, 100301, 'tokai-teio');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (133, '帝皇的魔咒', 100301, 'tokai-teio', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (219, 133, Up, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (220, 133, Down, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
@@ -456,6 +462,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (162, '帝皇的餘裕～♪', 100301, 'tokai-teio', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (265, 162, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (266, 162, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (7, 100302, 'tokai-teio');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (163, '以「對手」為名的「朋友」！', 100302, 'tokai-teio', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (267, 163, Up, 0, 2, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (268, 163, Down, 10, 0, 0, 0, 0, 0, 0, 15, NULL, 0, 0, 0);
@@ -534,6 +541,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (192, '帝皇的餘裕～♪', 100302, 'tokai-teio', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (313, 192, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (314, 192, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (8, 100303, 'tokai-teio');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (193, '射「心」', 100303, 'tokai-teio', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (315, 193, Up, 10, 0, 0, 0, 0, 0, 0, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (316, 193, Up, 10, 0, 0, 0, 0, 0, 0, 0, NULL, 1, 0, 0);
@@ -613,6 +621,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (222, '帝皇的餘裕～♪', 100303, 'tokai-teio', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (362, 222, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (363, 222, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (9, 100401, 'maruzensky');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (223, '街頭的潮流推手♪', 100401, 'maruzensky', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (364, 223, Up, 10, 0, 0, 0, 10, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (365, 223, Down, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -687,6 +696,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (250, '竟然大意了！？', 100401, 'maruzensky', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (408, 250, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (409, 250, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (10, 100402, 'maruzensky');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (251, '憧憬的「丸姐」', 100402, 'maruzensky', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (410, 251, Up, 10, 0, 10, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (411, 251, Down, 0, 0, 0, 0, 0, 15, 0, 0, NULL, 0, 0, 0);
@@ -761,6 +771,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (278, '竟然大意了！？', 100402, 'maruzensky', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (454, 278, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (455, 278, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (11, 100403, 'maruzensky');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (279, 'いつでもそばに', 100403, 'maruzensky', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (456, 279, Up, 0, 0, 0, 0, 0, 0, 0, 15, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (457, 279, Down, 15, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -835,6 +846,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (306, 'まさかの油断！？', 100403, 'maruzensky', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (500, 306, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (501, 306, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (12, 100501, 'fuji-kiseki');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (307, 'What a wonderful stage！', 100501, 'fuji-kiseki', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (502, 307, Up, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (503, 307, Down, 10, 0, 10, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -908,6 +920,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (334, '如果妳希望……', 100501, 'fuji-kiseki', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (545, 334, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (546, 334, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (13, 100502, 'fuji-kiseki');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (335, '奇蹟的形式', 100502, 'fuji-kiseki', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (547, 335, Up, 0, 0, 0, 10, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (548, 335, Down, 0, 0, 0, 0, 0, 15, 1, 10, NULL, 0, 0, 0);
@@ -981,6 +994,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (362, '如果妳希望……', 100502, 'fuji-kiseki', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (590, 362, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (591, 362, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (14, 100601, 'oguri-cap');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (363, '被託付的意志', 100601, 'oguri-cap', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (592, 363, Up, 0, 10, 10, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (593, 363, Down, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
@@ -1058,6 +1072,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (391, '逗貓的小栗帽', 100601, 'oguri-cap', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (638, 391, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (639, 391, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (15, 100602, 'oguri-cap');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (392, '為了在聖誕夜一同奔馳', 100602, 'oguri-cap', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (640, 392, Up, 0, 0, 0, 0, 0, 0, 0, 30, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (641, 392, Down, 10, 0, 5, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -1135,6 +1150,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (420, '逗貓的小栗帽', 100602, 'oguri-cap', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (686, 420, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (687, 420, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (16, 100701, 'gold-ship');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (421, '主角的紅色！', 100701, 'gold-ship', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (688, 421, Up, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (689, 421, Down, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -1210,6 +1226,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (449, '阿船飛上天……？', 100701, 'gold-ship', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (732, 449, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (733, 449, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (17, 100702, 'gold-ship');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (450, '龍金城的使者', 100702, 'gold-ship', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (734, 450, Up, 0, 0, 0, 0, 0, 0, 0, 15, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (735, 450, Down, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -1284,6 +1301,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (478, '阿船飛上天……？', 100702, 'gold-ship', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (777, 478, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (778, 478, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (18, 100703, 'gold-ship');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (479, '阿船流伸展台', 100703, 'gold-ship', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (779, 479, Up, 10, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (780, 479, Down, 0, 0, 30, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -1358,6 +1376,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (507, '阿船飛上天……？', 100703, 'gold-ship', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (822, 507, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (823, 507, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (19, 100801, 'vodka');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (508, '嚮往的古董皮衣', 100801, 'vodka', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (824, 508, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (825, 508, Down, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -1455,6 +1474,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (547, '眼神離不開閃耀的車身？', 100801, 'vodka', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (879, 547, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (880, 547, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (20, 100802, 'vodka');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (548, '對伏特加來說還太早了', 100802, 'vodka', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (881, 548, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (882, 548, Down, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -1553,6 +1573,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (587, '眼神離不開閃耀的車身？', 100802, 'vodka', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (937, 587, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (938, 587, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (21, 100901, 'daiwa-scarlet');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (588, '最棒的姿勢', 100901, 'daiwa-scarlet', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (939, 588, Up, 0, 10, 10, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (940, 588, Down, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
@@ -1638,6 +1659,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (621, '熱衷閱讀', 100901, 'daiwa-scarlet', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (988, 621, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (989, 621, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (22, 100902, 'daiwa-scarlet');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (622, '目標是完美聖誕節', 100902, 'daiwa-scarlet', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (990, 622, Up, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (991, 622, Down, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
@@ -1724,6 +1746,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (655, '熱衷閱讀', 100902, 'daiwa-scarlet', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1040, 655, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1041, 655, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (23, 101001, 'taiki-shuttle');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (656, '快槍決鬥！', 101001, 'taiki-shuttle', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1042, 656, Up, 10, 0, 0, 0, 0, 10, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1043, 656, Down, 0, 0, 0, 0, 10, 10, 0, 0, NULL, 0, 0, 0);
@@ -1805,6 +1828,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (686, '偷懶Friends', 101001, 'taiki-shuttle', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1090, 686, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1091, 686, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (24, 101002, 'taiki-shuttle');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (687, '精髓×Heart', 101002, 'taiki-shuttle', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1092, 687, Up, 0, 0, 0, 0, 0, 0, 0, 0, (隨機)  討人喜歡○, 0, 1, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1093, 687, Down, 0, 0, 20, 0, 0, 0, 0, 0, (隨機)  討人喜歡○, 0, 1, 0);
@@ -1886,6 +1910,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (717, '偷懶Friends', 101002, 'taiki-shuttle', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1140, 717, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1141, 717, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (25, 101101, 'grass-wonder');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (718, '隱藏的意義', 101101, 'grass-wonder', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1142, 718, Up, 0, 10, 0, 10, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1143, 718, Down, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -1954,6 +1979,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (742, 'Help！考試前一陣混亂', 101101, 'grass-wonder', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1183, 742, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1184, 742, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (26, 101102, 'grass-wonder');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (743, '努力不懈的氣魄【戰吼】', 101102, 'grass-wonder', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1185, 743, Up, 0, 0, 10, 0, 0, 0, 1, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1186, 743, Down, 0, 0, 0, 0, 0, 15, 0, 0, NULL, 0, 0, 0);
@@ -2022,6 +2048,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (767, 'Help！考試前一陣混亂', 101102, 'grass-wonder', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1226, 767, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1227, 767, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (27, 101103, 'grass-wonder');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (768, 'その禍を直さむと', 101103, 'grass-wonder', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1228, 768, None, 0, 0, 0, 0, 0, 0, 0, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1229, 768, None, 0, 30, 0, 0, 0, 0, 0, 0, NULL, 1, 0, 0);
@@ -2091,6 +2118,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (792, 'ヘルプ！　テスト前パニック', 101103, 'grass-wonder', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1270, 792, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1271, 792, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (28, 101201, 'hishi-amazon');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (793, '束手無策的對手……！？', 101201, 'hishi-amazon', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1272, 793, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1273, 793, Down, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -2160,6 +2188,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (818, '懷念的味道', 101201, 'hishi-amazon', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1313, 818, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1314, 818, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (29, 101202, 'hishi-amazon');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (819, '於雨林綻放的純潔心靈', 101202, 'hishi-amazon', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1315, 819, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1316, 819, Down, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -2229,6 +2258,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (844, '懷念的味道', 101202, 'hishi-amazon', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1356, 844, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1357, 844, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (30, 101301, 'mejiro-mcqueen');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (845, '決心與使命的證明', 101301, 'mejiro-mcqueen', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1358, 845, Up, 10, 0, 0, 0, 10, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1359, 845, Down, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -2300,6 +2330,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (870, '來襲！太空棒球殭屍', 101301, 'mejiro-mcqueen', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1401, 870, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1402, 870, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (31, 101302, 'mejiro-mcqueen');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (871, '同寢室的她～早就覺得是這樣～', 101302, 'mejiro-mcqueen', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1403, 871, Up, 0, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1404, 871, Down, 0, 10, 0, 0, 0, 0, 0, 15, NULL, 0, 0, 0);
@@ -2371,6 +2402,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (896, '來襲！太空棒球殭屍', 101302, 'mejiro-mcqueen', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1446, 896, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1447, 896, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (32, 101303, 'mejiro-mcqueen');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (897, '那一定，比未來的藍圖更……', 101303, 'mejiro-mcqueen', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1448, 897, Up, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1449, 897, Down, 0, 0, 0, 0, 0, 10, 0, 0, NULL, 0, 0, 0);
@@ -2443,6 +2475,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (922, '來襲！太空棒球殭屍', 101303, 'mejiro-mcqueen', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1492, 922, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1493, 922, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (33, 101401, 'el-condor-pasa');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (923, '下定決心成為世界最強', 101401, 'el-condor-pasa', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1494, 923, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1495, 923, Down, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -2511,6 +2544,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (948, '忘記的東西是什麼呢？', 101401, 'el-condor-pasa', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1534, 948, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1535, 948, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (34, 101402, 'el-condor-pasa');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (949, '寄宿在服裝上的烈火！', 101402, 'el-condor-pasa', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1536, 949, Up, 0, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1537, 949, Down, 7, 0, 7, 7, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -2579,6 +2613,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (974, '忘記的東西是什麼呢？', 101402, 'el-condor-pasa', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1576, 974, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1577, 974, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (35, 101501, 'tm-opera-o');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (975, '作為「霸王」', 101501, 'tm-opera-o', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1578, 975, Up, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1579, 975, Down, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -2646,6 +2681,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1000, '與妳來一段華麗的對談', 101501, 'tm-opera-o', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1617, 1000, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1618, 1000, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (36, 101502, 'tm-opera-o');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1001, '新春☆家庭公演！', 101502, 'tm-opera-o', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1619, 1001, None, 7, 7, 0, 0, 7, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1002, '狂奔．福賽馬娘競賽！', 101502, 'tm-opera-o', '決勝服事件');
@@ -2712,6 +2748,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1026, '與妳來一段華麗的對談', 101502, 'tm-opera-o', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1657, 1026, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1658, 1026, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (37, 101601, 'narita-brian');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1027, '匠心', 101601, 'narita-brian', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1659, 1027, Up, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1660, 1027, Down, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -2796,6 +2833,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1057, '好日子', 101601, 'narita-brian', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1710, 1057, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1711, 1057, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (38, 101602, 'narita-brian');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1058, '相互扶持', 101602, 'narita-brian', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1712, 1058, None, 0, 22, 0, 10, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1059, '誓言直到永遠', 101602, 'narita-brian', '決勝服事件');
@@ -2879,6 +2917,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1088, '好日子', 101602, 'narita-brian', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1762, 1088, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1763, 1088, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (39, 101701, 'symboli-rudolf');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1089, '途中，回首', 101701, 'symboli-rudolf', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1764, 1089, Up, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1765, 1089, Down, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -2961,6 +3000,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1120, '皇帝的大意', 101701, 'symboli-rudolf', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1812, 1120, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1813, 1120, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (40, 101702, 'symboli-rudolf');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1121, '心中燃起的烈火', 101702, 'symboli-rudolf', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1814, 1121, Up, 10, 0, 10, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1815, 1121, Down, 0, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -3043,6 +3083,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1152, '皇帝的大意', 101702, 'symboli-rudolf', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1862, 1152, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1863, 1152, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (41, 101801, 'air-groove');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1153, '贈花予你', 101801, 'air-groove', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1864, 1153, Up, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1865, 1153, Down, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -3117,6 +3158,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1180, '叢花遇風雨', 101801, 'air-groove', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1908, 1180, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1909, 1180, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (42, 101802, 'air-groove');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1181, '站在身旁的是……！', 101802, 'air-groove', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1910, 1181, Up, 0, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1911, 1181, Down, 0, 0, 0, 10, 10, 0, 0, 0, NULL, 0, 0, 0);
@@ -3191,6 +3233,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1208, '叢花遇風雨', 101802, 'air-groove', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1954, 1208, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1955, 1208, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (43, 101901, 'agnes-digital');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1209, '數碼老師教你怎麼「推」！', 101901, 'agnes-digital', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1956, 1209, Up, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (1957, 1209, Down, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -3271,6 +3314,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1239, '再一首！再一首就好……！', 101901, 'agnes-digital', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2003, 1239, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2004, 1239, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (44, 101902, 'agnes-digital');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1240, '萬聖節卡拉OK派對', 101902, 'agnes-digital', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2005, 1240, Up, 0, 0, 0, 0, 0, 0, 0, 0, (隨機)  討人喜歡○, 0, 1, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2006, 1240, Down, 0, 0, 20, 0, 0, 0, 0, 0, (隨機)  討人喜歡○, 0, 1, 0);
@@ -3352,6 +3396,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1270, '再一首！再一首就好……！', 101902, 'agnes-digital', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2053, 1270, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2054, 1270, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (45, 102001, 'seiun-sky');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1271, '靠焚香安眠', 102001, 'seiun-sky', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2055, 1271, Up, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2056, 1271, Down, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -3433,6 +3478,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1299, '有損釣師之名', 102001, 'seiun-sky', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2105, 1299, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2106, 1299, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (46, 102002, 'seiun-sky');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1300, '在「直道舞會」之前', 102002, 'seiun-sky', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2107, 1300, Up, 0, 0, 0, 0, 0, 30, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2108, 1300, Down, 0, 0, 0, 0, 10, 0, 0, 0, NULL, 0, 0, 0);
@@ -3513,6 +3559,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1328, '有損釣師之名', 102002, 'seiun-sky', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2156, 1328, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2157, 1328, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (47, 102101, 'tamamo-cross');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1329, '閃電之心', 102101, 'tamamo-cross', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2158, 1329, Up, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2159, 1329, Down, 0, 0, 0, 0, 0, 15, 0, 0, NULL, 0, 0, 0);
@@ -3585,6 +3632,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1356, '章魚燒粉的危機！', 102101, 'tamamo-cross', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2200, 1356, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2201, 1356, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (48, 102102, 'tamamo-cross');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1357, '前進吧！神轎', 102102, 'tamamo-cross', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2202, 1357, Up, 0, 0, 0, 0, 20, 20, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2203, 1357, Down, 0, 0, 10, 0, 0, 0, 0, 10, NULL, 0, 0, 0);
@@ -3658,6 +3706,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1384, '章魚燒粉的危機！', 102102, 'tamamo-cross', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2245, 1384, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2246, 1384, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (49, 102201, 'fine-motion');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1385, '約定的酢漿草', 102201, 'fine-motion', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2247, 1385, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2248, 1385, Down, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -3749,6 +3798,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1419, '先仔細聽完再說……♪', 102201, 'fine-motion', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2301, 1419, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2302, 1419, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (50, 102202, 'fine-motion');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1420, '妖精居住的森林？', 102202, 'fine-motion', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2303, 1420, None, 0, 0, 0, 0, 10, 10, 0, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2304, 1420, None, 0, 0, 0, 0, 0, 5, 0, 0, NULL, 1, 0, 0);
@@ -3839,6 +3889,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1454, '先仔細聽完再說……♪', 102202, 'fine-motion', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2356, 1454, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2357, 1454, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (51, 102301, 'biwa-hayahide');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1455, '該留？該丟？', 102301, 'biwa-hayahide', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2358, 1455, Up, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2359, 1455, Down, 0, 10, 10, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -3909,6 +3960,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1481, '透過眼鏡看見的最佳解法', 102301, 'biwa-hayahide', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2399, 1481, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2400, 1481, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (52, 102302, 'biwa-hayahide');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1482, '另一顆明星', 102302, 'biwa-hayahide', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2401, 1482, Up, 30, 0, 0, 10, 0, -10, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2402, 1482, Down, 0, 0, 0, 0, 0, 15, 0, 20, NULL, 0, 0, 0);
@@ -3978,6 +4030,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1508, '透過眼鏡看見的最佳解法', 102302, 'biwa-hayahide', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2441, 1508, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2442, 1508, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (53, 102303, 'biwa-hayahide');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1509, 'ifを求めよ', 102303, 'biwa-hayahide', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2443, 1509, None, 0, 0, 0, 10, 0, 10, 0, 0, Development Cooperation, 0, 0, 0);
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1510, '君と至る最適解', 102303, 'biwa-hayahide', '決勝服事件');
@@ -4045,6 +4098,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1535, 'メガネ越しの、最適解', 102303, 'biwa-hayahide', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2481, 1535, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2482, 1535, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (54, 102401, 'mayano-top-gun');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1536, '重砲的緊張刺激☆試膽遊戲！', 102401, 'mayano-top-gun', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2483, 1536, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2484, 1536, Down, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -4115,6 +4169,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1562, '來追我☆', 102401, 'mayano-top-gun', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2524, 1562, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2525, 1562, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (55, 102402, 'mayano-top-gun');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1563, 'You''re My Sunshine☆', 102402, 'mayano-top-gun', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2526, 1563, Up, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2527, 1563, Down, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -4185,6 +4240,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1589, '來追我☆', 102402, 'mayano-top-gun', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2567, 1589, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2568, 1589, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (56, 102403, 'mayano-top-gun');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1590, 'ハロウィンの楽しみ方♪', 102403, 'mayano-top-gun', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2569, 1590, Up, 0, 0, 0, 0, 0, 10, 1, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2570, 1590, Down, 0, 30, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -4254,6 +4310,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1616, '追いかけてね☆', 102403, 'mayano-top-gun', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2609, 1616, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2610, 1616, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (57, 102501, 'manhattan-cafe');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1617, '我等了，好久、好久……', 102501, 'manhattan-cafe', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2611, 1617, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2612, 1617, Down, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -4325,6 +4382,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1643, '夢境行者', 102501, 'manhattan-cafe', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2653, 1643, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2654, 1643, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (58, 102502, 'manhattan-cafe');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1644, '疲勞的治癒師', 102502, 'manhattan-cafe', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2655, 1644, Up, 0, 0, 0, 0, 0, 15, 1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2656, 1644, Up, 0, 0, 0, 0, 0, 25, 0, 0, NULL, 1, 0, 0);
@@ -4397,6 +4455,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1670, '夢境行者', 102502, 'manhattan-cafe', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2698, 1670, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2699, 1670, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (59, 102601, 'mihono-bourbon');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1671, '憧憬的光跡', 102601, 'mihono-bourbon', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2700, 1671, Up, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2701, 1671, Down, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -4467,6 +4526,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1697, '雀躍的購物', 102601, 'mihono-bourbon', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2741, 1697, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2742, 1697, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (60, 102602, 'mihono-bourbon');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1698, 'Mission for Valentine', 102602, 'mihono-bourbon', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2743, 1698, None, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1699, 'Not Found', 102602, 'mihono-bourbon', '決勝服事件');
@@ -4535,6 +4595,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1724, '雀躍的購物', 102602, 'mihono-bourbon', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2782, 1724, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2783, 1724, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (61, 102701, 'mejiro-ryan');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1725, '我在旁人眼中的決勝服打扮', 102701, 'mejiro-ryan', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2784, 1725, Up, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2785, 1725, Down, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -4601,6 +4662,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1749, '戀愛八卦……訓練！？', 102701, 'mejiro-ryan', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2823, 1749, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2824, 1749, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (62, 102702, 'mejiro-ryan');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1750, '聚集於巧克力的天使們', 102702, 'mejiro-ryan', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2825, 1750, None, 0, 10, 0, 10, 0, 0, 0, 10, NULL, 0, 0, 0);
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1751, 'White Heartbeat', 102702, 'mejiro-ryan', '決勝服事件');
@@ -4666,6 +4728,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1774, '戀愛八卦……訓練！？', 102702, 'mejiro-ryan', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2863, 1774, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2864, 1774, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (63, 102801, 'hishi-akebono');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1775, '收下吧，buono！', 102801, 'hishi-akebono', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2865, 1775, Up, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2866, 1775, Down, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -4738,6 +4801,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1800, '請好好抓牢喔～☆', 102801, 'hishi-akebono', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2909, 1800, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2910, 1800, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (64, 102901, 'yukino-bijin');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1801, '只要心懷故鄉', 102901, 'yukino-bijin', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2911, 1801, Up, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2912, 1801, Down, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -4807,6 +4871,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1826, '都市的誘惑……', 102901, 'yukino-bijin', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2952, 1826, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2953, 1826, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (65, 102902, 'yukino-bijin');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1827, '在都市「請品嚐看看餒」！', 102902, 'yukino-bijin', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2954, 1827, Up, 0, 0, 0, 0, 0, 15, 1, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2955, 1827, Down, 0, 0, 0, 0, 35, 0, 0, 0, NULL, 0, 0, 0);
@@ -4876,6 +4941,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1852, '都市的誘惑……', 102902, 'yukino-bijin', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2995, 1852, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2996, 1852, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (66, 103001, 'rice-shower');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1853, '配不上的自己', 103001, 'rice-shower', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2997, 1853, Up, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (2998, 1853, Down, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -4944,6 +5010,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1878, '最喜歡的那一頁', 103001, 'rice-shower', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3037, 1878, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3038, 1878, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (67, 103002, 'rice-shower');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1879, '米浴的放鬆大作戰！', 103002, 'rice-shower', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3039, 1879, Up, 0, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3040, 1879, Down, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -5012,6 +5079,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1904, '最喜歡的那一頁', 103002, 'rice-shower', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3079, 1904, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3080, 1904, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (68, 103003, 'rice-shower');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1905, '絵本の中の料理人', 103003, 'rice-shower', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3081, 1905, Up, 0, 0, 0, 0, 5, 20, 0, 0, (隨機)  備受矚目, 0, 1, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3082, 1905, Down, 0, 0, 0, 0, 0, 0, 0, 0, (隨機)  備受矚目, 0, 1, 0);
@@ -5079,6 +5147,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1930, '大好きなあのページ', 103003, 'rice-shower', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3120, 1930, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3121, 1930, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (69, 103101, 'ines-fujin');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1931, '姐姐們陪妳一起！', 103101, 'ines-fujin', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3122, 1931, Up, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3123, 1931, Down, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
@@ -5145,6 +5214,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1954, '我不能放著沮喪的小朋友不管！', 103101, 'ines-fujin', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3162, 1954, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3163, 1954, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (70, 103102, 'ines-fujin');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1955, '巧克力建議女神', 103102, 'ines-fujin', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3164, 1955, None, 20, 0, 0, 0, 0, 0, 0, 10, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3165, 1955, None, 10, 0, 0, 0, 0, 0, 2, 10, NULL, 1, 0, 0);
@@ -5211,6 +5281,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1978, '我不能放著沮喪的小朋友不管！', 103102, 'ines-fujin', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3204, 1978, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3205, 1978, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (71, 103201, 'agnes-tachyon');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (1979, '表現信念之物', 103201, 'agnes-tachyon', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3206, 1979, Up, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3207, 1979, Down, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -5286,6 +5357,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2007, '沉迷於研究！', 103201, 'agnes-tachyon', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3250, 2007, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3251, 2007, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (72, 103202, 'agnes-tachyon');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2008, '恐怖的海帶人！', 103202, 'agnes-tachyon', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3252, 2008, Up, 10, 0, 0, 0, 0, 0, 0, 0, (隨機)  擅長練習○, 0, 1, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3253, 2008, Down, 0, 0, 0, 0, 0, 10, 0, 0, (隨機)  擅長練習○, 0, 1, 0);
@@ -5360,6 +5432,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2036, '沉迷於研究！', 103202, 'agnes-tachyon', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3295, 2036, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3296, 2036, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (73, 103203, 'agnes-tachyon');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2037, '実験動物との意思疎通について', 103203, 'agnes-tachyon', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3297, 2037, Up, 0, 0, 0, 0, 30, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3298, 2037, Down, 0, 0, 10, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -5434,6 +5507,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2065, '研究に夢中！', 103203, 'agnes-tachyon', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3340, 2065, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3341, 2065, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (74, 103301, 'admire-vega');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2066, '感受我的情感吧', 103301, 'admire-vega', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3342, 2066, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3343, 2066, Down, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -5514,6 +5588,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2093, '不能放著不管！', 103301, 'admire-vega', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3392, 2093, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3393, 2093, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (75, 103302, 'admire-vega');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2094, '星月夜、ひとり', 103302, 'admire-vega', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3394, 2094, Up, 0, 0, 0, 0, 0, 20, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3395, 2094, Down, 0, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -5593,6 +5668,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2121, '放っておけない！', 103302, 'admire-vega', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3443, 2121, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3444, 2121, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (76, 103401, 'inari-one');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2122, '瀟灑的作風', 103401, 'inari-one', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3445, 2122, Up, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3446, 2122, Down, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -5665,6 +5741,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2148, '傳統藝能的魅力', 103401, 'inari-one', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3488, 2148, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3489, 2148, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (77, 103402, 'inari-one');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2149, '講故事也要用江戶風！', 103402, 'inari-one', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3490, 2149, Up, 0, 0, 20, 0, 0, 20, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3491, 2149, Down, 10, 10, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -5736,6 +5813,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2175, '傳統藝能的魅力', 103402, 'inari-one', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3532, 2175, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3533, 2175, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (78, 103501, 'winning-ticket');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2176, '全力考試！', 103501, 'winning-ticket', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3534, 2176, Up, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3535, 2176, Down, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -5805,6 +5883,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2201, '保養的好日子……？', 103501, 'winning-ticket', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3575, 2201, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3576, 2201, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (79, 103502, 'winning-ticket');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2202, '券藏送貨日記～蒸氣篇～', 103502, 'winning-ticket', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3577, 2202, Up, 0, 0, 0, 10, 0, 0, 0, 0, (隨機)  討人喜歡○, 0, 1, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3578, 2202, Down, 0, 0, 10, 0, 0, 0, 0, 0, (隨機)  討人喜歡○, 0, 1, 0);
@@ -5873,6 +5952,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2227, '保養的好日子……？', 103502, 'winning-ticket', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3617, 2227, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3618, 2227, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (80, 103503, 'winning-ticket');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2228, '手加減無用っ！！', 103503, 'winning-ticket', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3619, 2228, None, 10, 0, 0, 0, 0, 10, 0, 0, NULL, 0, 0, 0);
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2229, 'チケゾーチャンネル', 103503, 'winning-ticket', '決勝服事件');
@@ -5940,6 +6020,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2253, 'お手入れ日和……？', 103503, 'winning-ticket', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3658, 2253, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3659, 2253, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (81, 103601, 'air-shakur');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2254, '用「這個」來證明', 103601, 'air-shakur', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3660, 2254, Up, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3661, 2254, Down, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
@@ -6009,6 +6090,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2279, '給我做出更好的東西', 103601, 'air-shakur', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3701, 2279, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3702, 2279, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (82, 103602, 'air-shakur');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2280, 'Casting', 103602, 'air-shakur', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3703, 2280, Up, 0, 0, 0, 0, 0, 10, 0, 0, (隨機)  備受矚目, 0, 1, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3704, 2280, Down, 20, 0, 0, 0, 0, 0, 0, 0, (隨機)  備受矚目, 0, 1, 0);
@@ -6078,6 +6160,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2305, '給我做出更好的東西', 103602, 'air-shakur', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3744, 2305, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3745, 2305, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (83, 103701, 'eishin-flash');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2306, '與身上的榮耀相襯', 103701, 'eishin-flash', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3746, 2306, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3747, 2306, Down, 0, 0, 0, 0, 0, 0, 0, 40, NULL, 0, 0, 0);
@@ -6163,6 +6246,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2339, '仔細確認行程', 103701, 'eishin-flash', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3795, 2339, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3796, 2339, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (84, 103702, 'eishin-flash');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2340, '心存榮耀', 103702, 'eishin-flash', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3797, 2340, None, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2341, '這段時光就是最好的禮物', 103702, 'eishin-flash', '決勝服事件');
@@ -6246,6 +6330,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2373, '仔細確認行程', 103702, 'eishin-flash', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3844, 2373, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3845, 2373, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (85, 103703, 'eishin-flash');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2374, '砂上の策略', 103703, 'eishin-flash', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3846, 2374, Up, 0, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3847, 2374, Down, 0, 0, 0, 0, 0, 0, 0, 40, NULL, 0, 0, 0);
@@ -6330,6 +6415,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2407, 'スケジュール確認は入念に', 103703, 'eishin-flash', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3894, 2407, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3895, 2407, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (86, 103801, 'curren-chan');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2408, '最喜歡怎樣的真．機．伶呢？', 103801, 'curren-chan', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3896, 2408, Up, 10, 0, 10, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3897, 2408, Down, 0, 10, 0, 10, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -6397,6 +6483,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2433, '將可愛傳達出去？', 103801, 'curren-chan', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3935, 2433, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3936, 2433, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (87, 103802, 'curren-chan');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2434, 'Where are you, Curren？', 103802, 'curren-chan', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3937, 2434, None, 0, 0, 5, 0, 0, 0, 0, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3938, 2434, None, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 1, 0, 0);
@@ -6465,6 +6552,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2459, '將可愛傳達出去？', 103802, 'curren-chan', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3977, 2459, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3978, 2459, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (88, 103901, 'kawakami-princess');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2460, '將決心託付在禮服上', 103901, 'kawakami-princess', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3979, 2460, Up, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (3980, 2460, Down, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -6535,6 +6623,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2485, '皇家公主爆碎掌☆', 103901, 'kawakami-princess', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4021, 2485, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4022, 2485, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (89, 103902, 'kawakami-princess');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2486, '舞姬獻舞', 103902, 'kawakami-princess', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4023, 2486, Up, 0, 0, 10, 0, 0, 0, 0, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4024, 2486, Up, 0, 0, 10, 0, 0, 0, 0, 0, NULL, 1, 0, 0);
@@ -6605,6 +6694,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2511, '皇家公主爆碎掌☆', 103902, 'kawakami-princess', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4065, 2511, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4066, 2511, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (90, 104001, 'gold-city');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2512, 'order from client', 104001, 'gold-city', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4067, 2512, Up, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4068, 2512, Down, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -6675,6 +6765,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2538, '晨間攝影……', 104001, 'gold-city', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4108, 2538, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4109, 2538, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (91, 104002, 'gold-city');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2539, '「都市女孩」現在的心情♪', 104002, 'gold-city', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4110, 2539, Up, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4111, 2539, Down, 0, 0, 0, 0, 0, 15, 0, 0, NULL, 0, 0, 0);
@@ -6745,6 +6836,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2565, '晨間攝影……', 104002, 'gold-city', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4151, 2565, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4152, 2565, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (92, 104101, 'sakura-bakushin-o');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2566, '戀愛驀進！', 104101, 'sakura-bakushin-o', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4153, 2566, Up, 0, 10, 0, 0, 10, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4154, 2566, Down, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -6815,6 +6907,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2592, '班長超忙的！', 104101, 'sakura-bakushin-o', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4194, 2592, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4195, 2592, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (93, 104102, 'sakura-bakushin-o');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2593, '以一知萬，驀進式！', 104102, 'sakura-bakushin-o', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4196, 2593, Up, 0, 0, 10, 5, 0, 0, 1, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4197, 2593, Down, 0, 0, 0, 0, 0, 10, 1, 0, NULL, 0, 0, 0);
@@ -6885,6 +6978,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2619, '班長超忙的！', 104102, 'sakura-bakushin-o', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4237, 2619, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4238, 2619, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (94, 104201, 'seeking-the-pearl');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2620, '前無古人的challenge', 104201, 'seeking-the-pearl', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4239, 2620, Up, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4240, 2620, Down, 10, 0, 10, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -6950,6 +7044,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2644, '世界第一的話語', 104201, 'seeking-the-pearl', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4277, 2644, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4278, 2644, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (95, 104202, 'seeking-the-pearl');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2645, '世界のマジックハロウィン', 104202, 'seeking-the-pearl', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4279, 2645, Up, 0, 0, 0, 0, 0, 20, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4280, 2645, Down, 0, 0, 30, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -7015,6 +7110,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2669, '世界一の言葉', 104202, 'seeking-the-pearl', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4317, 2669, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4318, 2669, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (96, 104301, 'shinko-windy');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2670, '壞蛋是自由又帥氣的啦！', 104301, 'shinko-windy', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4319, 2670, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4320, 2670, Down, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -7088,6 +7184,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2696, '整天都在惡作劇喔！', 104301, 'shinko-windy', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4363, 2696, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4364, 2696, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (97, 104401, 'sweep-tosho');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2697, '靠魔法的力量！（鏘！）', 104401, 'sweep-tosho', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4365, 2697, Up, 0, 0, 10, 0, 10, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4366, 2697, Down, 0, 0, 10, 10, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -7162,6 +7259,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2726, '天才☆木頭人高手', 104401, 'sweep-tosho', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4407, 2726, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4408, 2726, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (98, 104402, 'sweep-tosho');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2727, '魔女としての成長', 104402, 'sweep-tosho', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4409, 2727, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4410, 2727, Down, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -7235,6 +7333,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2756, '天才☆だるまさんマスター', 104402, 'sweep-tosho', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4450, 2756, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4451, 2756, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (99, 104501, 'super-creek');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2757, '自我滿足的願望', 104501, 'super-creek', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4452, 2757, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4453, 2757, Down, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -7311,6 +7410,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2785, '很想做料理', 104501, 'super-creek', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4497, 2785, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4498, 2785, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (100, 104502, 'super-creek');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2786, 'Search or Mommy', 104502, 'super-creek', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4499, 2786, Up, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4500, 2786, Down, 0, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -7386,6 +7486,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2814, '很想做料理', 104502, 'super-creek', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4543, 2814, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4544, 2814, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (101, 104503, 'super-creek');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2815, 'いいこいいこを貴方に', 104503, 'super-creek', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4545, 2815, Up, 0, 0, 15, 0, 0, 0, 0, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4546, 2815, Up, 0, 0, 15, 0, 0, 0, 0, 0, NULL, 1, 0, 0);
@@ -7463,6 +7564,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2843, 'お料理がしたくて', 104503, 'super-creek', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4591, 2843, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4592, 2843, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (102, 104601, 'smart-falcon');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2844, '努力磨練吧☆DIAMOND', 104601, 'smart-falcon', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4593, 2844, Up, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4594, 2844, Down, 0, 0, 10, 10, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -7530,6 +7632,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2869, '充滿可愛☆', 104601, 'smart-falcon', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4632, 2869, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4633, 2869, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (103, 104602, 'smart-falcon');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2870, '我的首場演唱會', 104602, 'smart-falcon', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4634, 2870, None, 10, 0, 0, 0, 10, 0, 0, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4635, 2870, None, 5, 0, 0, 0, 0, 0, 0, 0, NULL, 1, 0, 0);
@@ -7597,6 +7700,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2895, '充滿可愛☆', 104602, 'smart-falcon', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4673, 2895, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4674, 2895, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (104, 104603, 'smart-falcon');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2896, 'みんなの笑顔のために♪', 104603, 'smart-falcon', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4675, 2896, Up, 10, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4676, 2896, Middle, 0, 0, 10, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -7666,6 +7770,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2921, 'かわいいがいっぱい☆', 104603, 'smart-falcon', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4716, 2921, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4717, 2921, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (105, 104701, 'zenno-rob-roy');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2922, '英雄伴隨著故事', 104701, 'zenno-rob-roy', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4718, 2922, Up, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4719, 2922, Down, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -7731,6 +7836,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2945, '連珠砲座談會', 104701, 'zenno-rob-roy', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4757, 2945, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4758, 2945, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (106, 104702, 'zenno-rob-roy');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2946, '受け継がれる物語', 104702, 'zenno-rob-roy', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4759, 2946, Up, 0, 30, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4760, 2946, Down, 0, 0, 10, 0, 0, 0, 0, 30, NULL, 0, 0, 0);
@@ -7795,6 +7901,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2969, '雨あられトークショー', 104702, 'zenno-rob-roy', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4797, 2969, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4798, 2969, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (107, 104801, 'tosen-jordan');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2970, '託付給亮粉的光輝', 104801, 'tosen-jordan', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4799, 2970, Up, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4800, 2970, Down, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -7863,6 +7970,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2995, '辣妹必備用品☆', 104801, 'tosen-jordan', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4839, 2995, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4840, 2995, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (108, 104802, 'tosen-jordan');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2996, '手上的「可愛」稍微沉重', 104802, 'tosen-jordan', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4841, 2996, None, 20, 0, 0, 0, 0, 10, 0, 0, NULL, 0, 0, 0);
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (2997, '「美照」教學！', 104802, 'tosen-jordan', '決勝服事件');
@@ -7929,6 +8037,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3021, '辣妹必備用品☆', 104802, 'tosen-jordan', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4879, 3021, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4880, 3021, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (109, 104901, 'nakayama-festa');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3022, '五分鐘的刺激', 104901, 'nakayama-festa', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4881, 3022, Up, 10, 0, 10, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4882, 3022, Down, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
@@ -7996,6 +8105,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3046, '下車後的愉悅', 104901, 'nakayama-festa', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4921, 3046, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4922, 3046, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (110, 105001, 'narita-taishin');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3047, '以我最真的姿態變強', 105001, 'narita-taishin', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4923, 3047, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4924, 3047, Down, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -8075,6 +8185,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3074, '與大進的閑靜時光', 105001, 'narita-taishin', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4972, 3074, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4973, 3074, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (111, 105002, 'narita-taishin');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3075, '任務：幫忙拆除工作！', 105002, 'narita-taishin', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4974, 3075, Up, 0, 10, 0, 0, 0, 0, 0, 0, (隨機)  備受矚目, 0, 1, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (4975, 3075, Down, 10, 0, 0, 0, 0, 0, 0, 0, (隨機)  備受矚目, 0, 1, 0);
@@ -8153,6 +8264,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3102, '與大進的閑靜時光', 105002, 'narita-taishin', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5022, 3102, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5023, 3102, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (112, 105003, 'narita-taishin');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3103, '繊細な猫', 105003, 'narita-taishin', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5024, 3103, Up, 10, 0, 0, 0, 0, 0, 0, 0, (隨機)  討人喜歡○, 0, 1, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5025, 3103, Down, 0, 10, 0, 0, 0, 0, 0, 0, (隨機)  討人喜歡○, 0, 1, 0);
@@ -8232,6 +8344,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3130, 'タイシンと安らぎの時間', 105003, 'narita-taishin', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5073, 3130, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5074, 3130, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (113, 105101, 'nishino-flower');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3131, '色彩與設計，加起來就是我', 105101, 'nishino-flower', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5075, 3131, Up, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5076, 3131, Down, 0, 0, 0, 0, 10, 10, 0, 0, NULL, 0, 0, 0);
@@ -8304,6 +8417,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3158, '睡魔襲來……', 105101, 'nishino-flower', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5117, 3158, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5118, 3158, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (114, 105102, 'nishino-flower');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3159, '緊緊相依，面面相對', 105102, 'nishino-flower', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5119, 3159, Up, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5120, 3159, Down, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -8376,6 +8490,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3186, '睡魔襲來……', 105102, 'nishino-flower', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5161, 3186, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5162, 3186, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (115, 105201, 'haru-urara');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3187, '最喜歡的決勝服！', 105201, 'haru-urara', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5163, 3187, Up, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5164, 3187, Down, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -8445,6 +8560,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3213, '誘～惑！呼喵～！', 105201, 'haru-urara', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5203, 3213, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5204, 3213, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (116, 105202, 'haru-urara');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3214, '上吧上吧，打雪仗！', 105202, 'haru-urara', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5205, 3214, None, 0, 0, 0, 0, 10, 0, 0, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5206, 3214, None, 10, 0, 0, 0, 10, 0, 0, 0, NULL, 1, 0, 0);
@@ -8514,6 +8630,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3240, '誘～惑！呼喵～！', 105202, 'haru-urara', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5245, 3240, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5246, 3240, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (117, 105301, 'bamboo-memory');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3241, '與勁敵共享火熱夢想！', 105301, 'bamboo-memory', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5247, 3241, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5248, 3241, Down, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -8586,6 +8703,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3267, '以誠相待！', 105301, 'bamboo-memory', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5290, 3267, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5291, 3267, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (118, 105302, 'bamboo-memory');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3268, '為了守護夏季的安寧！', 105302, 'bamboo-memory', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5292, 3268, None, 0, 0, 20, 0, 0, 10, 0, 0, NULL, 0, 0, 0);
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3269, '在夏天的海邊製造回憶', 105302, 'bamboo-memory', '決勝服事件');
@@ -8656,6 +8774,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3294, '以誠相待！', 105302, 'bamboo-memory', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5333, 3294, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5334, 3294, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (119, 105401, 'biko-pegasus');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3295, '勝負服は正義の憧れ！', 105401, 'biko-pegasus', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5335, 3295, Up, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5336, 3295, Down, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -8732,6 +8851,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3321, '恐怖！おもちゃの誘惑！', 105401, 'biko-pegasus', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5382, 3321, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5383, 3321, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (120, 105501, 'marvelous-sunday');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3322, '美麗☆綻放花朵', 105501, 'marvelous-sunday', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5384, 3322, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5385, 3322, Down, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -8795,6 +8915,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3345, '探求知識真是美麗☆', 105501, 'marvelous-sunday', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5421, 3345, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5422, 3345, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (121, 105601, 'matikanefukukitaru');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3346, '被選上的人之間', 105601, 'matikanefukukitaru', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5423, 3346, Up, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5424, 3346, Down, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -8864,6 +8985,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3371, '朝著吉祥方位GO！', 105601, 'matikanefukukitaru', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5464, 3371, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5465, 3371, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (122, 105602, 'matikanefukukitaru');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3372, '我是護身符！', 105602, 'matikanefukukitaru', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5466, 3372, Up, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5467, 3372, Down, 0, 0, 0, 0, 0, 0, 0, 7, NULL, 0, 0, 0);
@@ -8933,6 +9055,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3397, '朝著吉祥方位GO！', 105602, 'matikanefukukitaru', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5507, 3397, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5508, 3397, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (123, 105701, 'mr-cb');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3398, '與決勝服一起奔馳的意義', 105701, 'mr-cb', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5509, 3398, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5510, 3398, Down, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
@@ -9003,6 +9126,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3424, '因為想看見你們開心的表情', 105701, 'mr-cb', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5550, 3424, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5551, 3424, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (124, 105702, 'mr-cb');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3425, '遊びの天才', 105702, 'mr-cb', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5552, 3425, Up, 0, 10, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5553, 3425, Down, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -9072,6 +9196,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3451, '喜ぶ顔が見たいから', 105702, 'mr-cb', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5592, 3451, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5593, 3451, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (125, 105801, 'meisho-doto');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3452, '激鬥！超辣對決', 105801, 'meisho-doto', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5594, 3452, Up, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5595, 3452, Down, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -9149,6 +9274,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3481, '幸運物', 105801, 'meisho-doto', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5639, 3481, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5640, 3481, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (126, 105802, 'meisho-doto');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3482, '友誼的萬聖節遊行', 105802, 'meisho-doto', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5641, 3482, Up, 10, 0, 10, 0, 0, 0, 0, 0, (隨機)  討人喜歡○, 0, 1, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5642, 3482, Down, 0, 0, 0, 0, 0, 0, 0, 0, (隨機)  討人喜歡○, 0, 1, 0);
@@ -9227,6 +9353,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3511, '幸運物', 105802, 'meisho-doto', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5687, 3511, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5688, 3511, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (127, 105901, 'mejiro-dober');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3512, '目白的色彩', 105901, 'mejiro-dober', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5689, 3512, Up, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5690, 3512, Down, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -9300,6 +9427,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3539, '怎麼樣都要買到……！', 105901, 'mejiro-dober', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5732, 3539, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5733, 3539, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (128, 105902, 'mejiro-dober');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3540, '懷念的陪伴', 105902, 'mejiro-dober', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5734, 3540, Up, 20, 0, 0, 0, 0, 0, 0, 0, (隨機)  備受矚目, 0, 1, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5735, 3540, Down, 0, 0, 0, 0, 0, 0, 0, 0, (隨機)  備受矚目, 0, 1, 0);
@@ -9373,6 +9501,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3567, '怎麼樣都要買到……！', 105902, 'mejiro-dober', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5777, 3567, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5778, 3567, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (129, 106001, 'nice-nature');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3568, '素質小姐與辛苦的訓練員', 106001, 'nice-nature', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5779, 3568, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5780, 3568, Down, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -9452,6 +9581,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3599, '銅牌收藏家的目標', 106001, 'nice-nature', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5824, 3599, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5825, 3599, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (130, 106002, 'nice-nature');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3600, '用影片聲援！', 106002, 'nice-nature', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5826, 3600, Up, 0, 0, 10, 0, 0, 0, 0, 15, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5827, 3600, Down, 0, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -9529,6 +9659,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3631, '銅牌收藏家的目標', 106002, 'nice-nature', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5869, 3631, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5870, 3631, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (131, 106003, 'nice-nature');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3632, '日常的妳最是光彩奪目', 106003, 'nice-nature', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5871, 3632, Up, 0, 0, 33, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5872, 3632, Middle, 0, 0, 0, 33, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -9607,6 +9738,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3663, '銅牌收藏家的目標', 106003, 'nice-nature', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5915, 3663, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5916, 3663, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (132, 106101, 'king-halo');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3664, '最適合我的服裝', 106101, 'king-halo', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5917, 3664, Up, 10, 0, 0, 10, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5918, 3664, Down, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -9678,6 +9810,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3690, '預測也輕而易舉？', 106101, 'king-halo', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5959, 3690, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5960, 3690, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (133, 106102, 'king-halo');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3691, '東奔西走應援團', 106102, 'king-halo', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (5961, 3691, None, 0, 0, 20, 0, 0, 0, 2, 20, NULL, 0, 0, 0);
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3692, 'To Be Continued?', 106102, 'king-halo', '決勝服事件');
@@ -9747,6 +9880,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3717, '預測也輕而易舉？', 106102, 'king-halo', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6001, 3717, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6002, 3717, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (134, 106103, 'king-halo');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3718, '純白の不可侵領域', 106103, 'king-halo', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6003, 3718, Up, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6004, 3718, Down, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -9817,6 +9951,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3744, '予想も余裕……で？', 106103, 'king-halo', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6044, 3744, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6045, 3744, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (135, 106201, 'matikanetannhauser');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3745, '超越「平凡」', 106201, 'matikanetannhauser', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6046, 3745, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6047, 3745, Down, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -9893,6 +10028,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3774, '真正的蜘蛛……', 106201, 'matikanetannhauser', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6090, 3774, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6091, 3774, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (136, 106202, 'matikanetannhauser');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3775, '三人齊心開賽車！！！', 106202, 'matikanetannhauser', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6092, 3775, Up, 0, 10, 0, 5, 0, 0, 1, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6093, 3775, Down, 0, 0, 0, 0, 0, 10, 1, 0, NULL, 0, 0, 0);
@@ -9969,6 +10105,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3804, '真正的蜘蛛……', 106202, 'matikanetannhauser', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6136, 3804, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6137, 3804, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (137, 106301, 'ikuno-dictus');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3805, '継がれる炎', 106301, 'ikuno-dictus', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6138, 3805, Up, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6139, 3805, Down, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -10035,6 +10172,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3829, '先人の教え', 106301, 'ikuno-dictus', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6177, 3829, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6178, 3829, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (138, 106401, 'mejiro-palmer');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3830, '因為是重要的地方', 106401, 'mejiro-palmer', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6179, 3830, Up, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6180, 3830, Down, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
@@ -10105,6 +10243,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3855, '得助人一臂之力才行……', 106401, 'mejiro-palmer', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6221, 3855, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6222, 3855, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (139, 106402, 'mejiro-palmer');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3856, '開門前來', 106402, 'mejiro-palmer', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6223, 3856, Up, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6224, 3856, Middle, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -10176,6 +10315,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3881, '得助人一臂之力才行……', 106402, 'mejiro-palmer', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6266, 3881, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6267, 3881, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (140, 106501, 'daitaku-helios');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3882, '登上舞台超有幹勁！', 106501, 'daitaku-helios', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6268, 3882, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6269, 3882, Down, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -10253,6 +10393,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3912, '不能錯過☆這個BIG WAVE', 106501, 'daitaku-helios', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6312, 3912, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6313, 3912, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (141, 106502, 'daitaku-helios');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3913, 'リベンジパーリナイ！', 106502, 'daitaku-helios', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6314, 3913, None, 15, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3914, 'っぱらびゅが1番な☆', 106502, 'daitaku-helios', '決勝服事件');
@@ -10336,6 +10477,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3947, '逃せない☆このBIG WAVE', 106502, 'daitaku-helios', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6360, 3947, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6361, 3947, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (142, 106601, 'twin-turbo');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3948, '最終兵器三渦輪！', 106601, 'twin-turbo', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6362, 3948, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6363, 3948, Down, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -10404,6 +10546,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3973, '畫圖渦輪', 106601, 'twin-turbo', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6402, 3973, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6403, 3973, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (143, 106701, 'satono-diamond');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (3974, '堅硬的鑽石在棉花裡', 106701, 'satono-diamond', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6404, 3974, Up, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6405, 3974, Down, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -10475,6 +10618,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4000, '人潮的另一端……', 106701, 'satono-diamond', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6446, 4000, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6447, 4000, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (144, 106702, 'satono-diamond');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4001, '年底慣例！充滿感謝的大掃除', 106702, 'satono-diamond', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6448, 4001, None, 0, 10, 0, 0, 0, 0, 0, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6449, 4001, None, 0, 30, 0, 0, 0, 0, 0, 0, NULL, 1, 0, 0);
@@ -10545,6 +10689,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4027, '人潮的另一端……', 106702, 'satono-diamond', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6489, 4027, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6490, 4027, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (145, 106703, 'satono-diamond');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4028, '原石的心願', 106703, 'satono-diamond', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6491, 4028, Up, 0, 0, 0, 0, 30, 0, 0, 0, (隨機)  天賦異稟, 0, 1, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6492, 4028, Down, 10, 0, 0, 0, 0, 0, 0, 0, (隨機)  天賦異稟, 0, 1, 0);
@@ -10615,6 +10760,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4054, '人潮的另一端……', 106703, 'satono-diamond', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6532, 4054, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6533, 4054, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (146, 106801, 'kitasan-black');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4055, 'Forget me not！', 106801, 'kitasan-black', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6534, 4055, Up, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6535, 4055, Down, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -10686,6 +10832,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4081, '藍天之下大展歌喉', 106801, 'kitasan-black', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6576, 4081, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6577, 4081, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (147, 106802, 'kitasan-black');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4082, '雖然也有不相像的地方', 106802, 'kitasan-black', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6578, 4082, None, 0, 0, 0, 10, 0, 0, 0, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6579, 4082, None, 0, 0, 0, 30, 0, 0, 0, 0, NULL, 1, 0, 0);
@@ -10756,6 +10903,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4108, '藍天之下大展歌喉', 106802, 'kitasan-black', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6619, 4108, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6620, 4108, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (148, 106803, 'kitasan-black');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4109, '我會成為助人王子的！', 106803, 'kitasan-black', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6621, 4109, Up, 0, 0, 0, 0, 0, 25, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6622, 4109, Down, 0, 10, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -10829,6 +10977,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4135, '藍天之下大展歌喉', 106803, 'kitasan-black', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6665, 4135, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6666, 4135, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (149, 106901, 'sakura-chiyono-o');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4136, '「畫面中窺見日常」', 106901, 'sakura-chiyono-o', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6667, 4136, Up, 0, 0, 10, 0, 10, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6668, 4136, Down, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -10907,6 +11056,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4165, '千代筆記的歷史', 106901, 'sakura-chiyono-o', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6713, 4165, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6714, 4165, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (150, 106902, 'sakura-chiyono-o');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4166, '為妳而辦的直道舞會', 106902, 'sakura-chiyono-o', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6715, 4166, Up, 0, 0, 0, 0, 0, 20, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6716, 4166, Down, 20, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -10984,6 +11134,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4195, '千代筆記的歷史', 106902, 'sakura-chiyono-o', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6760, 4195, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6761, 4195, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (151, 107001, 'sirius-symboli');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4196, '量身訂製的精髓', 107001, 'sirius-symboli', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6762, 4196, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6763, 4196, Down, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -11056,6 +11207,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4221, '在天空翱翔的一等星', 107001, 'sirius-symboli', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6806, 4221, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6807, 4221, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (152, 107002, 'sirius-symboli');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4222, 'その足が世界を踏みしめるのならば', 107002, 'sirius-symboli', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6808, 4222, Up, 0, 0, 0, 5, 0, 0, 0, 0, (隨機)  擅長練習○, 0, 1, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6809, 4222, Down, 0, 0, 0, 0, 0, 15, 0, 0, (隨機)  擅長練習○, 0, 1, 0);
@@ -11127,6 +11279,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4247, '空駆ける一等星', 107002, 'sirius-symboli', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6851, 4247, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6852, 4247, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (153, 107101, 'mejiro-ardan');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4248, '彼此信任', 107101, 'mejiro-ardan', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6853, 4248, Up, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6854, 4248, Down, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -11209,6 +11362,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4279, '準備慶功宴', 107101, 'mejiro-ardan', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6901, 4279, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6902, 4279, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (154, 107102, 'mejiro-ardan');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4280, '薄雪的祕密', 107102, 'mejiro-ardan', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6903, 4280, Up, 20, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6904, 4280, Down, 0, 0, 0, 0, 0, 20, 0, 0, NULL, 0, 0, 0);
@@ -11291,6 +11445,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4311, '準備慶功宴', 107102, 'mejiro-ardan', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6951, 4311, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6952, 4311, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (155, 107201, 'yaeno-muteki');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4312, '「被認可」的重量', 107201, 'yaeno-muteki', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6953, 4312, Up, 0, 0, 0, 10, 10, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6954, 4312, Down, 0, 10, 10, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -11358,6 +11513,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4336, '八重無敵的臨摹練習', 107201, 'yaeno-muteki', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6993, 4336, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6994, 4336, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (156, 107202, 'yaeno-muteki');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4337, '鼓舞激励の『熱血握手会』', 107202, 'yaeno-muteki', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6995, 4337, Up, 0, 0, 15, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (6996, 4337, Down, 0, 0, 0, 25, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -11425,6 +11581,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4361, 'ヤエノムテキの見取り稽古', 107202, 'yaeno-muteki', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7035, 4361, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7036, 4361, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (157, 107301, 'tsurumaru-tsuyoshi');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4362, '言葉は力となって', 107301, 'tsurumaru-tsuyoshi', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7037, 4362, Up, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7038, 4362, Down, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -11493,6 +11650,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4386, 'な～んでも聞いてよ！', 107301, 'tsurumaru-tsuyoshi', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7078, 4386, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7079, 4386, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (158, 107401, 'mejiro-bright');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4387, '心懷蒼綠的意念', 107401, 'mejiro-bright', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7080, 4387, Up, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7081, 4387, Down, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
@@ -11564,6 +11722,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4414, '千金小姐的講究', 107401, 'mejiro-bright', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7121, 4414, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7122, 4414, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (159, 107402, 'mejiro-bright');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4415, '目白光明不明白', 107402, 'mejiro-bright', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7123, 4415, Up, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7124, 4415, Middle, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -11635,6 +11794,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4442, '千金小姐的講究', 107402, 'mejiro-bright', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7164, 4442, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7165, 4442, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (160, 107601, 'sakura-laurel');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4443, '一片片的象徵', 107601, 'sakura-laurel', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7166, 4443, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7167, 4443, Down, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -11746,6 +11906,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4489, 'conduite', 107601, 'sakura-laurel', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7228, 4489, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7229, 4489, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (161, 107701, 'narita-top-road');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4490, '我能做的事', 107701, 'narita-top-road', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7230, 4490, Up, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7231, 4490, Down, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -11809,6 +11970,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4512, '回憶中的香精', 107701, 'narita-top-road', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7268, 4512, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7269, 4512, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (162, 107702, 'narita-top-road');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4513, 'クリスマスを捕まえろ', 107702, 'narita-top-road', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7270, 4513, Up, 0, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7271, 4513, Down, 0, 0, 0, 0, 0, 20, 0, 0, NULL, 0, 0, 0);
@@ -11871,6 +12033,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4535, '思い出エッセンス', 107702, 'narita-top-road', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7307, 4535, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7308, 4535, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (163, 107801, 'yamanin-zephyr');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4536, '超越微風', 107801, 'yamanin-zephyr', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7309, 4536, Up, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7310, 4536, Down, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -11940,6 +12103,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4562, '隨興而吹的風……', 107801, 'yamanin-zephyr', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7349, 4562, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7350, 4562, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (164, 107802, 'yamanin-zephyr');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4563, 'February, Pure Winds', 107802, 'yamanin-zephyr', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7351, 4563, Up, 0, 0, 0, 5, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7352, 4563, Down, 0, 0, 0, 0, 10, 0, 0, 15, NULL, 0, 0, 0);
@@ -12008,6 +12172,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4589, '風の吹くまま……', 107802, 'yamanin-zephyr', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7390, 4589, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7391, 4589, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (165, 107901, 'furioso');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4590, '魂の置き場所', 107901, 'furioso', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7392, 4590, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7393, 4590, Down, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -12077,6 +12242,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4615, '笑いあった貴方のために', 107901, 'furioso', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7433, 4615, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7434, 4615, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (166, 108001, 'transcend');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4616, '盛り上げ上手と乗せ上手', 108001, 'transcend', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7435, 4616, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7436, 4616, Down, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -12146,6 +12312,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4640, 'ネタ集めは日常から', 108001, 'transcend', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7477, 4640, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7478, 4640, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (167, 108201, 'north-flight');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4641, '心まで輝かせて', 108201, 'north-flight', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7479, 4641, Up, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7480, 4641, Down, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -12215,6 +12382,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4666, '覗くだけ、にならなくて', 108201, 'north-flight', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7520, 4666, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7521, 4666, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (168, 108301, 'symboli-kris-s');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4667, '家族色', 108301, 'symboli-kris-s', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7522, 4667, Up, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7523, 4667, Down, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -12285,6 +12453,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4692, '任務是絕對的', 108301, 'symboli-kris-s', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7564, 4692, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7565, 4692, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (169, 108302, 'symboli-kris-s');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4693, 'Where is my mission?', 108302, 'symboli-kris-s', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7566, 4693, Up, 0, 0, 0, 0, 0, 10, 0, 0, (隨機)  備受矚目, 0, 1, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7567, 4693, Down, 0, 0, 20, 0, 0, 0, 0, 0, (隨機)  備受矚目, 0, 1, 0);
@@ -12357,6 +12526,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4718, '任務是絕對的', 108302, 'symboli-kris-s', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7610, 4718, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7611, 4718, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (170, 108401, 'tanino-gimlet');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4719, '致幼時的離別', 108401, 'tanino-gimlet', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7612, 4719, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7613, 4719, Down, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
@@ -12430,6 +12600,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4745, '致吾盟友，懷著友愛', 108401, 'tanino-gimlet', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7656, 4745, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7657, 4745, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (171, 108402, 'tanino-gimlet');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4746, '破壊の先に――', 108402, 'tanino-gimlet', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7658, 4746, Up, 0, 0, 15, 0, 0, 0, 1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7659, 4746, Up, 0, 0, 15, 0, 0, 0, 0, 15, NULL, 1, 0, 0);
@@ -12503,6 +12674,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4772, '我が盟友へ、愛をこめて', 108402, 'tanino-gimlet', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7702, 4772, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7703, 4772, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (172, 108501, 'daiichi-ruby');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4773, '其姿華麗', 108501, 'daiichi-ruby', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7704, 4773, Up, 15, 0, 0, 0, 0, 0, 1, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7705, 4773, Down, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -12572,6 +12744,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4798, '為了家族利益', 108501, 'daiichi-ruby', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7745, 4798, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7746, 4798, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (173, 108502, 'daiichi-ruby');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4799, '『自由な散歩』の調べ', 108502, 'daiichi-ruby', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7747, 4799, None, 0, 0, 0, 0, 15, 0, 0, 0, (隨機)  天賦異稟, 0, 1, 0);
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4800, '華であることのつとめ', 108502, 'daiichi-ruby', '決勝服事件');
@@ -12639,6 +12812,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4824, '一族の利のために', 108502, 'daiichi-ruby', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7786, 4824, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7787, 4824, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (174, 108601, 'mejiro-ramonu');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4825, '愛跟火焰很像', 108601, 'mejiro-ramonu', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7788, 4825, Up, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7789, 4825, Down, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -12709,6 +12883,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4851, '比賽不分貴賤', 108601, 'mejiro-ramonu', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7829, 4851, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7830, 4851, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (175, 108602, 'mejiro-ramonu');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4852, 'Desire', 108602, 'mejiro-ramonu', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7831, 4852, Up, 0, 0, 0, 0, 0, 30, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7832, 4852, Down, 0, 0, 0, 0, 0, -10, 0, 45, NULL, 0, 0, 0);
@@ -12779,6 +12954,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4878, 'レースに貴賤なし', 108602, 'mejiro-ramonu', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7872, 4878, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7873, 4878, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (176, 108701, 'aston-machan');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4879, '綁起來不要忘記', 108701, 'aston-machan', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7874, 4879, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7875, 4879, Down, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -12850,6 +13026,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4905, '服務粉絲也很重要', 108701, 'aston-machan', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7916, 4905, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7917, 4905, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (177, 108702, 'aston-machan');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4906, 'バレンタインは沼なのです', 108702, 'aston-machan', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7918, 4906, Up, 0, 0, 0, 0, 5, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7919, 4906, Down, 0, 0, 0, 0, 0, 20, 0, 0, NULL, 0, 0, 0);
@@ -12920,6 +13097,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4932, 'ファンサービスも大事', 108702, 'aston-machan', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7959, 4932, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7960, 4932, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (178, 108801, 'satono-crown');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4933, '互相分擔責任', 108801, 'satono-crown', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7961, 4933, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (7962, 4933, Down, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
@@ -12991,6 +13169,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4958, '尊重情誼', 108801, 'satono-crown', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8004, 4958, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8005, 4958, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (179, 108901, 'cheval-grand');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4959, '又高又遠', 108901, 'cheval-grand', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8006, 4959, Up, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8007, 4959, Down, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -13062,6 +13241,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4986, '請別那麼積極向我搭話……！', 108901, 'cheval-grand', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8047, 4986, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8048, 4986, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (180, 109001, 'verxina');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (4987, '見守る視線の先で', 109001, 'verxina', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8049, 4987, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8050, 4987, Down, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -13129,6 +13309,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5011, 'お姉ちゃんセレクション', 109001, 'verxina', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8089, 5011, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8090, 5011, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (181, 109101, 'vivlos');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5012, '現在還只是童話故事', 109101, 'vivlos', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8091, 5012, Up, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8092, 5012, Down, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
@@ -13201,6 +13382,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5039, '怦然心動永不停止', 109101, 'vivlos', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8133, 5039, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8134, 5039, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (182, 109301, 'ksmiracle');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5040, '完全相反但相似的兩人', 109301, 'ksmiracle', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8135, 5040, Up, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8136, 5040, Down, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
@@ -13261,6 +13443,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5061, '溫柔地偷懶一下', 109301, 'ksmiracle', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8171, 5061, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8172, 5061, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (183, 109401, 'jungle-pocket');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5062, '俺の勝負服【トップク】！', 109401, 'jungle-pocket', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8173, 5062, Up, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8174, 5062, Down, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -13331,6 +13514,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5087, '放課後お笑いタイム', 109401, 'jungle-pocket', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8215, 5087, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8216, 5087, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (184, 109601, 'no-reason');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5088, '纏うは野心、備うるは覚悟', 109601, 'no-reason', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8217, 5088, Up, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8218, 5088, Down, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -13397,6 +13581,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5112, '大好きな趣味', 109601, 'no-reason', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8256, 5112, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8257, 5112, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (185, 109801, 'copano-rickey');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5113, '喚來Happy的決勝服☆', 109801, 'copano-rickey', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8258, 5113, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8259, 5113, Down, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -13464,6 +13649,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5138, '歷奇的毛遂自薦☆煩惱諮詢室', 109801, 'copano-rickey', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8297, 5138, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8298, 5138, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (186, 109802, 'copano-rickey');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5139, '舞い散る薄紅を掴んで、集めて', 109802, 'copano-rickey', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8299, 5139, Up, 0, 0, 0, 10, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8300, 5139, Middle, 0, 0, 0, 0, 10, 0, 0, 0, NULL, 0, 0, 0);
@@ -13533,6 +13719,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5164, 'リッキーの押しかけ☆お悩み相談室', 109802, 'copano-rickey', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8340, 5164, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8341, 5164, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (187, 109901, 'hokko-tarumae');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5165, '賣出給你看，苫小牧！', 109901, 'hokko-tarumae', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8342, 5165, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8343, 5165, Down, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
@@ -13604,6 +13791,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5191, '身為觀光大使……', 109901, 'hokko-tarumae', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8384, 5191, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8385, 5191, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (188, 109902, 'hokko-tarumae');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5192, '見ていてくれる人たち', 109902, 'hokko-tarumae', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8386, 5192, Up, 0, 15, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8387, 5192, Down, 0, 0, 0, 0, 0, 0, 0, 40, NULL, 0, 0, 0);
@@ -13674,6 +13862,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5218, '観光大使として……', 109902, 'hokko-tarumae', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8427, 5218, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8428, 5218, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (189, 110001, 'wonder-acute');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5219, '給出一種答案。', 110001, 'wonder-acute', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8429, 5219, Up, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8430, 5219, Down, 0, 0, 0, 0, 10, 0, 0, 15, NULL, 0, 0, 0);
@@ -13741,6 +13930,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5243, '刻苦的一戰……！', 110001, 'wonder-acute', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8469, 5243, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8470, 5243, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (190, 110201, 'sounds-of-earth');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5244, '衣装もまた奏でる', 110201, 'sounds-of-earth', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8471, 5244, Up, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8472, 5244, Down, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
@@ -13809,6 +13999,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5269, 'ルバート', 110201, 'sounds-of-earth', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8511, 5269, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8512, 5269, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (191, 110401, 'katsuragi-ace');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5270, '葛城榮主', 110401, 'katsuragi-ace', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8513, 5270, Up, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8514, 5270, Down, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -13885,6 +14076,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5298, '你說誰不可能會贏？', 110401, 'katsuragi-ace', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8558, 5298, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8559, 5298, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (192, 110402, 'katsuragi-ace');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5299, '粘り強い一年へ！', 110402, 'katsuragi-ace', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8560, 5299, Up, 10, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8561, 5299, Down, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -13960,6 +14152,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5327, '誰が勝てるわけないって？', 110402, 'katsuragi-ace', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8604, 5327, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8605, 5327, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (193, 110501, 'neo-universe');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5328, '初次交流的訊息', 110501, 'neo-universe', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8606, 5328, Up, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8607, 5328, Down, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -14027,6 +14220,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5353, '脫離天文館', 110501, 'neo-universe', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8645, 5353, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8646, 5353, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (194, 110502, 'neo-universe');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5354, 'ルナティック・アドベンチャー', 110502, 'neo-universe', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8647, 5354, Up, 0, 0, 30, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8648, 5354, Down, 0, 10, 0, 0, 0, 0, 0, 30, NULL, 0, 0, 0);
@@ -14093,6 +14287,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5379, 'プラネタリウムを飛び出して', 110502, 'neo-universe', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8685, 5379, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8686, 5379, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (195, 110601, 'hishi-miracle');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5380, '不是「普通」的東西', 110601, 'hishi-miracle', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8687, 5380, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8688, 5380, Down, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -14157,6 +14352,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5402, '想一口氣看完……', 110601, 'hishi-miracle', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8726, 5402, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8727, 5402, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (196, 110701, 'tap-dance-city');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5403, '就算是大風大浪', 110701, 'tap-dance-city', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8728, 5403, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8729, 5403, Down, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -14227,6 +14423,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5428, 'I''m with you!', 110701, 'tap-dance-city', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8770, 5428, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8771, 5428, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (197, 110702, 'tap-dance-city');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5429, '甲板に降り立ち、まずは一礼', 110702, 'tap-dance-city', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8772, 5429, Up, 15, 0, 0, 0, 0, 0, 1, 15, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8773, 5429, Up, 15, 0, 0, 0, 0, 0, 0, 15, NULL, 1, 0, 0);
@@ -14297,6 +14494,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5454, 'I''m with you!', 110702, 'tap-dance-city', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8814, 5454, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8815, 5454, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (198, 110801, 'duramente');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5455, 'ただ、連綿と', 110801, 'duramente', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8816, 5455, Up, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8817, 5455, Down, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
@@ -14361,6 +14559,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5478, 'そこに、マシンがあるから', 110801, 'duramente', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8854, 5478, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8855, 5478, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (199, 110901, 'rhein-kraft');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5479, 'ティアラの輝きは燦然と', 110901, 'rhein-kraft', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8856, 5479, Up, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8857, 5479, Down, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -14427,6 +14626,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5503, 'かみなりパシャリ！', 110901, 'rhein-kraft', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8895, 5503, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8896, 5503, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (200, 111001, 'cesario');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5504, '戦う者', 111001, 'cesario', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8897, 5504, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8898, 5504, Down, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -14504,6 +14704,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5533, '話題の1冊', 111001, 'cesario', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8942, 5533, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8943, 5533, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (201, 111002, 'cesario');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5534, '病める時も、健やかなる時も', 111002, 'cesario', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8944, 5534, Up, 0, 0, 0, 0, 0, 30, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8945, 5534, Down, 0, 0, 0, 0, 0, -10, 0, 45, NULL, 0, 0, 0);
@@ -14581,6 +14782,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5563, '話題の1冊', 111002, 'cesario', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8989, 5563, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8990, 5563, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (202, 111101, 'air-messiah');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5564, '母と私の想いを乗せて', 111101, 'air-messiah', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8991, 5564, Up, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (8992, 5564, Down, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -14649,6 +14851,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5588, '母への想い', 111101, 'air-messiah', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9032, 5588, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9033, 5588, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (203, 111501, 'orfevre');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5589, '王の覇道、王への忠勤', 111501, 'orfevre', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9034, 5589, Up, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9035, 5589, Down, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -14720,6 +14923,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5614, 'その一撃は光輝に満ちて', 111501, 'orfevre', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9077, 5614, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9078, 5614, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (204, 111601, 'gentildonna');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5615, '赤', 111601, 'gentildonna', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9079, 5615, Up, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9080, 5615, Down, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -14788,6 +14992,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5640, 'わからされる本能', 111601, 'gentildonna', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9119, 5640, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9120, 5640, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (205, 111701, 'win-variation');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5641, '舞台に咲く深紅の華', 111701, 'win-variation', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9121, 5641, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9122, 5641, Down, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -14874,6 +15079,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5675, 'その物語に心奪われて', 111701, 'win-variation', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9170, 5675, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9171, 5675, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (206, 111901, 'dream-journey');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5676, '親愛なる我がファミリーへ', 111901, 'dream-journey', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9172, 5676, Up, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9173, 5676, Down, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -14937,6 +15143,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5698, '手のひらで広がる愛', 111901, 'dream-journey', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9210, 5698, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9211, 5698, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (207, 112001, 'calstone-light-o');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5699, '直線番長の名のもとに', 112001, 'calstone-light-o', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9212, 5699, Up, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9213, 5699, Down, 20, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -15009,6 +15216,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5726, 'あゝ直進街道', 112001, 'calstone-light-o', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9254, 5726, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9255, 5726, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (208, 112101, 'durandal');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5727, '騎士たる矜持ここにあり', 112101, 'durandal', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9256, 5727, Up, 0, 0, 0, 0, 20, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9257, 5727, Down, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -15075,6 +15283,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5750, 'Have a good “knight”!', 112101, 'durandal', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9296, 5750, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9297, 5750, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (209, 112401, 'bubble-gum-fellow');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5751, '元気の源を詰め込んで', 112401, 'bubble-gum-fellow', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9298, 5751, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9299, 5751, Down, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -15141,6 +15350,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5775, 'カワイイがいっぱい', 112401, 'bubble-gum-fellow', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9337, 5775, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9338, 5775, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (210, 112701, 'fenomeno');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5776, '守るべき『もの』', 112701, 'fenomeno', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9339, 5776, Up, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9340, 5776, Down, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -15208,6 +15418,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5799, '熱きサボりの誘惑', 112701, 'fenomeno', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9380, 5799, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9381, 5799, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (211, 113101, 'gran-alegria');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5800, 'マイルールは誰のため？', 113101, 'gran-alegria', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9382, 5800, Up, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9383, 5800, Down, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -15280,6 +15491,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5825, '虚をつく野菜たち', 113101, 'gran-alegria', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9426, 5825, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9427, 5825, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (212, 113201, 'loves-only-you');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5826, 'その身に愛を纏って', 113201, 'loves-only-you', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9428, 5826, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9429, 5826, Down, 0, 20, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
@@ -15349,6 +15561,7 @@ INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, st
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5851, '夢中になりすぎた企画', 113201, 'loves-only-you', '沒有選項的事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9469, 5851, None, 0, 0, 0, -5, 0, 15, -1, 0, NULL, 1, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9470, 5851, None, 0, 0, 0, -5, 0, 15, 0, 0, 偷懶成性, 1, 0, 0);
+INSERT INTO uma_table (count, uma_id, uma_name) VALUES (213, 113301, 'chrono-genesis');
 INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (5852, '大いなる一歩', 113301, 'chrono-genesis', '決勝服事件');
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9471, 5852, Up, 0, 0, 20, 0, 0, 0, 0, 0, NULL, 0, 0, 0);
 INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (9472, 5852, Down, 0, 0, 0, 20, 0, 0, 0, 0, NULL, 0, 0, 0);

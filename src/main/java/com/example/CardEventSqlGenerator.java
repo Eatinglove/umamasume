@@ -63,13 +63,13 @@ public class CardEventSqlGenerator {
         writer.write(
             "CREATE TABLE card_table (\n" +
             "    count INTEGER PRIMARY KEY,\n" +
-            "    uma_id INTEGER PRIMARY KEY,\n" +
+            "    uma_id INTEGER,\n" +
             "    uma_name TEXT,\n" +
             ");\n" +
             "CREATE TABLE card_events (\n" +
             "    event_id INTEGER PRIMARY KEY,\n" +
             "    event_name TEXT,\n" +
-            "    uma_id INTEGER PRIMARY KEY,\n" +
+            "    uma_id INTEGER,\n" +
             "    uma_name TEXT,\n" +
             "    category TEXT,\n" +
             ");\n" +
@@ -108,6 +108,7 @@ public class CardEventSqlGenerator {
         String[] names = file.getName().split("-", 2);
         uma_id = Integer.parseInt(names[0].trim());
         uma_name = names[1].replace(".txt", "").trim();
+        writeCardSQL(uma_id, uma_name, writer);
 
         for (String line : lines) {
             line = line.trim();
@@ -253,6 +254,10 @@ public class CardEventSqlGenerator {
             if (!part.isBlank()) results.add(part.trim());
         }
         return results;
+    }
+
+    private static void writeCardSQL(Integer uma_id, String uma_name, BufferedWriter writer) throws IOException {
+        writer.write(String.format("INSERT INTO card_table (count, uma_id, uma_name) VALUES (%d, %d, '%s');\n", 1, uma_id, escape(uma_name)));
     }
 
     private static void writeEventSQL(Event event, BufferedWriter writer) throws IOException {
