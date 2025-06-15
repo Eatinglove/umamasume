@@ -1,93 +1,4 @@
-/*package com.example;
-
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.JavascriptExecutor;
-
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.List;
-
-public class CardEvent {
-
-    public static void main(String[] args) {
-        String filePath = "C:\\Users\\djes1\\Desktop\\uma\\sortedhref.txt"; 
-
-        //readEvent(filePath);
-        processLineEvent("https://gametora.com/zh-tw/umamusume/supports/30028-kitasan-black");
-    }
-
-    private static void readEvent(String filePath){
-    
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                processLineEvent("https://gametora.com"+line);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private static void processLineEvent(String url){
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\djes1\\Desktop\\uma\\chromedriver135.exe");
-        WebDriver driver = new ChromeDriver(); 
-        try{
-            driver.get(url);
-            Thread.sleep(1000);
-            writeEvent(driver);
-        }
-        catch(Exception e){
-            System.out.println(url+" ¿ù»~ " + e.getMessage());
-        }
-        finally{
-            driver.quit();
-        }
-    }
-    //private static StringBuilder cardEvent = new StringBuilder();
-    private static void writeEvent(WebDriver webdriver) {
-        JavascriptExecutor js = (JavascriptExecutor) webdriver;
-        StringBuilder cardEvent = new StringBuilder();
-    
-        // §ä¨ì©Ò¦³ class="compatibility_viewer_item__SWULM" ªº¤¸¯À
-        List<WebElement> items = webdriver.findElements(By.className("compatibility_viewer_item__SWULM"));
-        int i=0;
-        for (WebElement item : items) {
-            try {
-                // ÂIÀ»¸Ó¤¸¯À¡AÄ²µo aria-expanded ÅÜ§ó
-                item.click();
-                Thread.sleep(1000); // µ¥«ÝÅÜ¤Æ¥Í®Ä
-                
-                // Àò¨ú·í«eªº HTML
-                Document doc = Jsoup.parse(webdriver.getPageSource());
-    
-                // Åª¨ú class="tooltips_ttable_cell__3NMF" ªº¤º®e
-                Elements events = doc.select("div.tooltips_ttable_cell___3NMF, td.tooltips_ttable_cell___3NMF");
-
-                for (Element event : events) {
-                    cardEvent.append(event.text()).append("\n");
-                }
-                cardEvent.append("-------------------------\n");
-    
-            } catch (Exception e) {
-                System.out.println("³B²z¨Æ¥ó®Éµo¥Í¿ù»~¡G" + e.getMessage());
-            }
-        }
-    
-        // ¿é¥X©Ò¦³Åª¨úªº¤º®e
-        System.out.println(cardEvent.toString());
-    }
-    
-}*/
+/* 
 package com.example;
 
 import org.jsoup.Jsoup;
@@ -135,9 +46,14 @@ public class CardEvent {
             e.printStackTrace();
         }
     }
-private static void processCardEvent(WebDriver driver, String url) {
+    private static void processCardEvent(WebDriver driver, String url) {
     String cardId = url.substring(url.lastIndexOf("/") + 1);
-
+    String fileName = OUTPUT_DIR + "\\" + cardId + ".txt";
+    File file = new File(fileName);
+    if(file.exists()){
+        System.out.println(fileName + "Exist");
+        return;
+    }
     try {
         driver.get(url);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -175,14 +91,14 @@ private static void processCardEvent(WebDriver driver, String url) {
                 cardEvent.append("-------------------------\n");
 
             } catch (Exception e) {
-                System.out.println("³B²z¨Æ¥ó®Éµo¥Í¿ù»~¡G" + e.getMessage());
+                System.out.println(" B z Æ¥ Éµo Í¿  ~ G" + e.getMessage());
             }
         }
 
         saveToFile(cardId, cardEvent.toString());
 
     } catch (Exception e) {
-        System.out.println("³B²z " + url + " ®Éµo¥Í¿ù»~¡G" + e.getMessage());
+        System.out.println(" B z " + url + "  Éµo Í¿  ~ G" + e.getMessage());
     }
     }
     
@@ -198,7 +114,149 @@ private static void processCardEvent(WebDriver driver, String url) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
             writer.write(content);
         } catch (IOException e) {
-            System.out.println("¼g¤JÀÉ®×®É¿ù»~¡G" + e.getMessage());
+            System.out.println(" g J É®×®É¿  ~ G" + e.getMessage());
         }
     }
 }
+*/
+package com.example;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class CardEvent {
+
+    private static final String DRIVER_PATH = "uma\\chromedriver.exe";
+    private static final String OUTPUT_DIR = "uma\\AllCardEvent";
+    private static final String URL_PREFIX = "https://gametora.com";
+    private static final String FILE_PATH = "uma\\sortedhref_supports.txt";
+
+    public static void main(String[] args) {
+        System.setProperty("webdriver.chrome.driver", DRIVER_PATH);
+        WebDriver driver = new ChromeDriver();
+
+        try {
+            readEventFile(FILE_PATH, driver);
+        } finally {
+            driver.quit();
+        }
+    }
+
+    private static void readEventFile(String filePath, WebDriver driver) {
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String fullUrl = URL_PREFIX + line;
+                processCardEvent(driver, "https://gametora.com/zh-tw/umamusume/supports/10127-air-messiah");
+                break;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void processCardEvent(WebDriver driver, String url) {
+        String cardId = url.substring(url.lastIndexOf("/") + 1);
+        File folder = new File(OUTPUT_DIR);
+        if (!folder.exists()) {
+            folder.mkdirs();
+        }
+        String filePath = OUTPUT_DIR + "\\" + cardId + ".txt";
+
+        File output = new File(filePath);
+
+        try (Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filePath), "utf-8"))) {
+            driver.get(url);
+            Thread.sleep(3000);
+
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            List<WebElement> eventBlocks = driver.findElements(By.className("eventhelper_elist__A0Bud"));
+
+            for (WebElement block : eventBlocks) {
+                String category = block.findElement(By.className("gvZhII")).getText();
+                writer.write("åˆ†é¡ž:" + category + "\n");
+
+                List<WebElement> events = block.findElements(By.className("compatibility_viewer_item__SWULM"));
+
+                for (WebElement event : events) {
+                    String eventName = event.getText();
+                    writer.write("  äº‹ä»¶:" + eventName + "\n");
+
+                    try {
+                        event.click();
+                        wait.until(ExpectedConditions.attributeToBe(event, "aria-expanded", "true"));
+                        Thread.sleep(300);
+
+                        WebElement tooltip = driver.findElement(By.className("tooltips_tooltip__iWtqn"));
+                        List<WebElement> rows = tooltip.findElements(By.className("tooltips_ttable_row__T8N69"));
+
+                        if (rows.size() > 0) {
+                            for (WebElement row : rows) {
+                                List<WebElement> cells = row.findElements(By.className("tooltips_ttable_cell___3NMF"));
+                                if (cells.size() >= 2) {
+                                    String option = cells.get(0).getText();
+                                    List<WebElement> bonusDivs = cells.get(1).findElements(By.tagName("div"));
+                                    StringBuilder effectText = new StringBuilder();
+                                    effectText.append("||"); 
+                                    for (WebElement bonusDiv : bonusDivs) {
+                                        String bonus = bonusDiv.getText().trim();
+                                        if (!bonus.isEmpty()) {
+                                            effectText.append(bonus).append("||");
+                                        }
+                                    }
+                                    writer.write("    " + option + "->" + effectText.toString() + "\n");
+                                } else if (cells.size() == 1) {
+                                    List<WebElement> bonusDivs = cells.get(0).findElements(By.tagName("div"));
+                                    StringBuilder effectText = new StringBuilder();
+                                    effectText.append("||");
+                                    for (WebElement bonusDiv : bonusDivs) {
+                                        String bonus = bonusDiv.getText().trim();
+                                        if (!bonus.isEmpty()) {
+                                            effectText.append(bonus).append("||");
+                                        }
+                                    }
+                                    writer.write("    æ•ˆæžœ" + effectText.toString() + "\n");
+                                }
+                            }
+                        } else {
+                            List<WebElement> singleCells = tooltip.findElements(By.className("tooltips_ttable_cell___3NMF"));
+                            for (WebElement cell : singleCells) {
+                                List<WebElement> bonusDivs = cell.findElements(By.tagName("div"));
+                                StringBuilder effectText = new StringBuilder();
+                                effectText.append("||");
+                                for (WebElement bonusDiv : bonusDivs) {
+                                    String bonus = bonusDiv.getText().trim();
+                                    if (!bonus.isEmpty()) {
+                                        effectText.append(bonus).append("||");
+                                    }
+                                }
+                                writer.write("    " + effectText.toString() + "\n");
+                            }
+                        }
+                    } catch (Exception e) {
+                        writer.write("error\n");
+                    }
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("error" + url + e.getMessage());
+        }
+    }
+}
+
+
