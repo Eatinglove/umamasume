@@ -23,8 +23,8 @@ public class Choice {
         speedTrainStat.setBasicValue(uma, 1,1);
         powerTrainStat.setBasicValue(uma ,1,0);
         //計算其他(友情，人頭等)
-        speedTrainStat.setOtherStuff(roundInfo.getRoundStat(1));
-        powerTrainStat.setOtherStuff(roundInfo.getRoundStat(1));
+        speedTrainStat.setOtherStuff(roundInfo.getRoundStat(0));
+        powerTrainStat.setOtherStuff(roundInfo.getRoundStat(0));
         //跑訓練
         Train.trainSpeedCal(uma, speedTrainStat, powerTrainStat);
     }
@@ -37,8 +37,8 @@ public class Choice {
         staminaTrainStat.setBasicValue(uma, 2,1);
         willTrainStat.setBasicValue(uma ,2,0);
 
-        staminaTrainStat.setOtherStuff(roundInfo.getRoundStat(2));
-        willTrainStat.setOtherStuff(roundInfo.getRoundStat(2));
+        staminaTrainStat.setOtherStuff(roundInfo.getRoundStat(1));
+        willTrainStat.setOtherStuff(roundInfo.getRoundStat(1));
         Train.trainStaminaCal(uma, staminaTrainStat, willTrainStat);
     }
 
@@ -50,8 +50,8 @@ public class Choice {
         powerTrainStat.setBasicValue(uma, 3,1);
         staminaTrainStat.setBasicValue(uma, 3,0);
 
-        powerTrainStat.setOtherStuff(roundInfo.getRoundStat(3));
-        staminaTrainStat.setOtherStuff(roundInfo.getRoundStat(3));
+        powerTrainStat.setOtherStuff(roundInfo.getRoundStat(2));
+        staminaTrainStat.setOtherStuff(roundInfo.getRoundStat(2));
         Train.trainPowerCal(uma, powerTrainStat, staminaTrainStat);
     }
 
@@ -65,9 +65,9 @@ public class Choice {
         speedTrainStat.setBasicValue(uma, 4,0);
         powerTrainStat.setBasicValue(uma, 4,2);
 
-        willTrainStat.setOtherStuff(roundInfo.getRoundStat(4));
-        speedTrainStat.setOtherStuff(roundInfo.getRoundStat(4));
-        powerTrainStat.setOtherStuff(roundInfo.getRoundStat(4));
+        willTrainStat.setOtherStuff(roundInfo.getRoundStat(3));
+        speedTrainStat.setOtherStuff(roundInfo.getRoundStat(3));
+        powerTrainStat.setOtherStuff(roundInfo.getRoundStat(3));
 
         Train.trainWillCal(uma, willTrainStat, speedTrainStat, powerTrainStat);
     }
@@ -80,8 +80,8 @@ public class Choice {
         knowledgeTrainStat.setBasicValue(uma, 5,1);
         speedTrainStat.setBasicValue(uma, 5,0);
 
-        knowledgeTrainStat.setOtherStuff(roundInfo.getRoundStat(5));
-        speedTrainStat.setOtherStuff(roundInfo.getRoundStat(5));
+        knowledgeTrainStat.setOtherStuff(roundInfo.getRoundStat(4));
+        speedTrainStat.setOtherStuff(roundInfo.getRoundStat(4));
 
         Train.trainKnowledgeCal(uma, knowledgeTrainStat, speedTrainStat);
     }

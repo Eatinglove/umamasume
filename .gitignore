@@ -1,0 +1,9 @@
+# 忽略編譯產物
+target/
+*.class
+
+# 忽略IDE設定檔
+.vscode/
+
+# 忽略資料庫檔案
+*.sql 
