@@ -1,12 +1,12 @@
 package com.example;
 //把每回合的數值存在這裡，之後從這裡拿取資訊來計算
 public class TrainStat {
-    private int basic;
-    private int friend;
-    private int mood;
-    private int people;
-    private int trainBonus;
-    private int hpcost;
+    private double basic;
+    private double friend;
+    private double mood;
+    private double people;
+    private double trainBonus;
+    private double hpcost;
     //設定basic數值
     public void setBasicValue(Uma uma, int type, int main){
         int level;
@@ -64,6 +64,38 @@ public class TrainStat {
     }
     //設定其他的數值
     public void setOtherStuff(double[] roundStat){
+        this.mood=roundStat[0];
+        this.friend=roundStat[1];
+        this.trainBonus=roundStat[2];
+        this.people=1 + 0.05*roundStat[3];//1+人頭數*0.05
+        this.basic= this.basic+roundStat[4];//加上basic
+    }
 
+    //一般訓練
+    public double getValue(){
+
+        double value = 0;
+
+        value = (basic)*(mood)*(trainBonus)*(people);
+
+        return value;
+    }
+    
+    //友情訓練
+    public double getFriendValue(){
+        
+        double value = 0;
+
+        value=(basic)*(friend)*(mood)*(trainBonus)*(people);
+
+        return value;
+    }
+
+    public double getHPCost(){
+        double value;
+
+        value=this.hpcost;
+
+        return value;
     }
 }

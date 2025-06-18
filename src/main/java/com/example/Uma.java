@@ -6,9 +6,9 @@ public class Uma {
     private int power;
     private int will;
     private int knowledge;
-    private int hp;
+    private int hp;//(default 100, range 0 to 100)
     private int pt;
-    private int mood;
+    private int mood;//(default 3, range 1 to 5)
 
     private int speedBonus;
     private int staminaBonus;
@@ -57,6 +57,12 @@ public class Uma {
 
     public void changeMood(int value) {
         this.mood += value;
+        if(this.mood>5){
+            this.mood=5;
+        }
+        if(this.mood<1){
+            this.mood=1;
+        }
     }
 
     public void changeSpeedBonus(int value) {
@@ -194,7 +200,7 @@ public class Uma {
         this.knowledgeLevel = 1;
 
         this.pt = 120;
-        this.mood = 3;
+        this.mood = 3;//1¨ì5
         this.hp = 100;
         this.maxLevel = 5;
     }
