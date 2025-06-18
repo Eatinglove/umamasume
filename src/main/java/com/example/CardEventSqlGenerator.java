@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CardEventSqlGenerator {
-    static int eventId = 1, choiceId = 1, effectId = 1;
+    static int eventId = 1, choiceId = 1, effectId = 1, uma_count = 1;
 
     static class Event {
         String event_name;
@@ -34,7 +34,7 @@ public class CardEventSqlGenerator {
         Integer mood;
         Integer skill_point;
         Integer character_favor;
-        String condition;
+        String event_condition;
 
         boolean is_random_value;
         boolean is_random_attribute;
@@ -61,17 +61,18 @@ public class CardEventSqlGenerator {
 
     private static void writeSchema(BufferedWriter writer) throws IOException {
         writer.write(
+            "Use uma_db;\n"+
             "CREATE TABLE card_table (\n" +
             "    count INTEGER PRIMARY KEY,\n" +
             "    uma_id INTEGER,\n" +
-            "    uma_name TEXT,\n" +
+            "    uma_name TEXT\n" +
             ");\n" +
             "CREATE TABLE card_events (\n" +
             "    event_id INTEGER PRIMARY KEY,\n" +
             "    event_name TEXT,\n" +
             "    uma_id INTEGER,\n" +
             "    uma_name TEXT,\n" +
-            "    category TEXT,\n" +
+            "    category TEXT\n" +
             ");\n" +
             "CREATE TABLE card_event_choices (\n" +
             "    choice_id INTEGER PRIMARY KEY,\n" +
@@ -87,7 +88,7 @@ public class CardEventSqlGenerator {
             "    mood INTEGER,\n" +
             "    skill_point INTEGER,\n" +
             "    character_favor INTEGER,\n" +
-            "    condition TEXT,\n" +
+            "    event_condition TEXT,\n" +
             "    is_random_value BOOLEAN,\n" +
             "    is_random_attribute BOOLEAN,\n" +
             "    is_random_block_training BOOLEAN,\n" +
@@ -152,13 +153,13 @@ public class CardEventSqlGenerator {
                 choice.is_random_attribute = false;
                 choice.is_random_block_training = false;
                 if (line.contains("上選項")) {
-                    choice.choice_label = "Up";
+                    choice.choice_label = "'Up'";
                 } else if (line.contains("下選項")) {
-                    choice.choice_label = "Down";
+                    choice.choice_label = "'Down'";
                 } else if (line.contains("中間選項")) {
-                    choice.choice_label = "Middle";
+                    choice.choice_label = "'Middle'";
                 } else {
-                    choice.choice_label = "None";
+                    choice.choice_label = "'None'";
                 }
 
                 if (chained != 0) {
@@ -207,7 +208,12 @@ public class CardEventSqlGenerator {
                     } else if (effect.contains("技能靈感")) {
                         
                     } else if (effect.contains("狀態")) {
-                        choice.condition = effect.replace("獲得", "").replace("狀態", "").trim();
+                        String temp = effect.replace("獲得", "").replace("狀態", "").trim();
+                        if (temp == null || temp.isEmpty()) {
+                            choice.event_condition = "NULL";
+                        } else {
+                            choice.event_condition = "'" + temp + "'";
+                        }
                     } else if (effect.contains("Pt")) {
                         choice.skill_point = Integer.valueOf(effect.replaceAll("[^0-9+-]", ""));
                     } else if (effect.contains("在下一回合，會禁用 4 種隨機的訓練類型")) {
@@ -257,17 +263,18 @@ public class CardEventSqlGenerator {
     }
 
     private static void writeCardSQL(Integer uma_id, String uma_name, BufferedWriter writer) throws IOException {
-        writer.write(String.format("INSERT INTO card_table (count, uma_id, uma_name) VALUES (%d, %d, '%s');\n", 1, uma_id, escape(uma_name)));
+        writer.write(String.format("INSERT INTO card_table (count, uma_id, uma_name) VALUES (%d, %d, '%s');\n", uma_count, uma_id, escape(uma_name)));
+        uma_count++;
     }
 
     private static void writeEventSQL(Event event, BufferedWriter writer) throws IOException {
         writer.write(String.format("INSERT INTO card_events (event_id, event_name, uma_id, uma_name, category) VALUES (%d, '%s', %d, '%s', '%s');\n",
                 eventId, escape(event.event_name), event.uma_id,escape(event.uma_name), escape(event.category)));
         for (Choice choice : event.choices) {
-            writer.write(String.format("INSERT INTO card_event_choices (choice_id, event_id, choice_label, chained_index, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, character_favor, condition, is_random_value, is_random_attribute, is_random_block_training, is_end_chained_event) VALUES (%d, %d, %s, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %s, %d, %d, %d, %d);\n",
-                choiceId, eventId, choice.choice_label == null ? "NULL" : escape(choice.choice_label), choice.chain_index, choice.speed, choice.stamina, choice.strength,
+            writer.write(String.format("INSERT INTO card_event_choices (choice_id, event_id, choice_label, chain_index, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, character_favor, event_condition, is_random_value, is_random_attribute, is_random_block_training, is_end_chained_event) VALUES (%d, %d, %s, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %s, %d, %d, %d, %d);\n",
+                choiceId, eventId, choice.choice_label, choice.chain_index, choice.speed, choice.stamina, choice.strength,
                 choice.willpower, choice.intelligence, choice.hp, choice.mood, choice.skill_point,
-                choice.character_favor, choice.condition == null ? "NULL" : escape(choice.condition), choice.is_random_value ? 1 : 0,
+                choice.character_favor, choice.event_condition, choice.is_random_value ? 1 : 0,
                 choice.is_random_attribute ? 1 : 0, choice.is_random_block_training ? 1 : 0, choice.is_end_chained_event ? 1 : 0));
             choiceId++;
         }

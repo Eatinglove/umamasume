@@ -32,7 +32,7 @@ public class UmaEventSqlGenerator {
         Integer hp;
         Integer mood;
         Integer skill_point;
-        String condition;
+        String event_condition;
 
         boolean is_random_value;
         boolean is_random_attribute;
@@ -58,17 +58,18 @@ public class UmaEventSqlGenerator {
 
     private static void writeSchema(BufferedWriter writer) throws IOException {
         writer.write(
+            "Use uma_db;\n"+
             "CREATE TABLE uma_table (\n" +
             "    count INTEGER PRIMARY KEY,\n" +
             "    uma_id INTEGER,\n" +
-            "    uma_name TEXT,\n" +
+            "    uma_name TEXT\n" +
             ");\n" +
             "CREATE TABLE events (\n" +
             "    event_id INTEGER PRIMARY KEY,\n" +
             "    event_name TEXT,\n" +
             "    uma_id INTEGER,\n" +
             "    uma_name TEXT,\n" +
-            "    category TEXT,\n" +
+            "    category TEXT\n" +
             ");\n" +
             "CREATE TABLE event_choices (\n" +
             "    choice_id INTEGER PRIMARY KEY,\n" +
@@ -82,7 +83,7 @@ public class UmaEventSqlGenerator {
             "    hp INTEGER,\n" +
             "    mood INTEGER,\n" +
             "    skill_point INTEGER,\n" +
-            "    condition TEXT,\n" +
+            "    event_condition TEXT,\n" +
             "    is_random_value BOOLEAN,\n" +
             "    is_random_attribute BOOLEAN,\n" +
             "    is_random_block_training BOOLEAN\n" +
@@ -141,13 +142,13 @@ public class UmaEventSqlGenerator {
                 choice.is_random_attribute = false;
                 choice.is_random_block_training = false;
                 if (line.contains("上選項")) {
-                    choice.choice_label = "Up";
+                    choice.choice_label = "'Up'";
                 } else if (line.contains("下選項")) {
-                    choice.choice_label = "Down";
+                    choice.choice_label = "'Down'";
                 } else if (line.contains("中間選項")) {
-                    choice.choice_label = "Middle";
+                    choice.choice_label = "'Middle'";
                 } else {
-                    choice.choice_label = "None";
+                    choice.choice_label = "'None'";
                 }
 
                 List<String> effects = new ArrayList<String>();
@@ -188,7 +189,12 @@ public class UmaEventSqlGenerator {
                     } else if (effect.contains("技能靈感")) {
                         
                     } else if (effect.contains("狀態")) {
-                        choice.condition = effect.replace("獲得", "").replace("狀態", "").trim();
+                        String temp = effect.replace("獲得", "").replace("狀態", "").trim();
+                        if (temp == null || temp.isEmpty()) {
+                            choice.event_condition = "NULL";
+                        } else {
+                            choice.event_condition = "'" + temp + "'";
+                        }
                     } else if (effect.contains("技能")) {
                         choice.skill_point = Integer.valueOf(effect.replaceAll("[^0-9+-]", ""));
                     } else if (effect.contains("在下一回合，會禁用 4 種隨機的訓練類型")) {
@@ -237,9 +243,9 @@ public class UmaEventSqlGenerator {
         writer.write(String.format("INSERT INTO events (event_id, event_name, uma_id, uma_name, category) VALUES (%d, '%s', %d, '%s', '%s');\n",
                 eventId, escape(event.event_name), event.uma_id,escape(event.uma_name), escape(event.category)));
         for (Choice choice : event.choices) {
-            writer.write(String.format("INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (%d, %d, %s, %d, %d, %d, %d, %d, %d, %d, %d, %s, %d, %d, %d);\n",
-                choiceId, eventId, choice.choice_label == null ? "NULL" : escape(choice.choice_label), choice.speed, choice.stamina, choice.strength, choice.willpower,
-                choice.intelligence, choice.hp, choice.mood, choice.skill_point, choice.condition == null ? "NULL" : escape(choice.condition), choice.is_random_value ? 1 : 0,
+            writer.write(String.format("INSERT INTO event_choices (choice_id, event_id, choice_label, speed, stamina, strength, willpower, intelligence, hp, mood, skill_point, event_condition, is_random_value, is_random_attribute, is_random_block_training) VALUES (%d, %d, %s, %d, %d, %d, %d, %d, %d, %d, %d, %s, %d, %d, %d);\n",
+                choiceId, eventId, choice.choice_label, choice.speed, choice.stamina, choice.strength, choice.willpower,
+                choice.intelligence, choice.hp, choice.mood, choice.skill_point, choice.event_condition, choice.is_random_value ? 1 : 0,
                 choice.is_random_attribute ? 1 : 0, choice.is_random_block_training ? 1 : 0));
             choiceId++;
         }
@@ -247,6 +253,7 @@ public class UmaEventSqlGenerator {
     }
 
     private static String escape(String s) {
+        System.out.println("escape: " + s);
         return s.replace("'", "''");
     }
 }

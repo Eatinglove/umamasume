@@ -58,6 +58,7 @@ public class CardInfoSqlGenerator {
 
     private static void writeSchema(BufferedWriter writer) throws IOException {
         writer.write(
+            "Use uma_db;\n"+
             "CREATE TABLE card_info (\n" +
             "    card_info_id INTEGER PRIMARY KEY,\n" +
             "    uma_id INTEGER,\n" +
@@ -201,8 +202,8 @@ public class CardInfoSqlGenerator {
 
     private static void write_CardInfo(Card_info currentInfo, BufferedWriter writer) throws IOException {
         writer.write(String.format("INSERT INTO card_info (card_info_id, uma_id, uma_name, level_name, friend_bonus, motivation_bonus, "+
-        "appear_rate_bonus, initial_favor_bonus, initial_speed_bonus, initial_stamina_bonus, initial_strength_bonus, initial_willpower_bonus, "+
-        "initial_intelligence_bonus, speed_enhancement, stamina_enhancement, strength_enhancement, willpower_enhancement, intelligence_enhancement, skill_point_enhancement"+
+        "appear_rate_bonus, initial_favor_gauge, initial_speed_gauge, initial_stamina_gauge, initial_strength_gauge, initial_willpower_gauge, "+
+        "initial_intelligence_gauge, speed_enhancement, stamina_enhancement, strength_enhancement, willpower_enhancement, intelligence_enhancement, skill_point_enhancement,"+
         "intelligence_hp_recovery, training_bonus, failure_rate_bonus) VALUES (%d, %d, '%s', '%s', %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d);\n",
             currentInfo.card_info_id, currentInfo.uma_id, currentInfo.uma_name == null ? "NULL" : escape(currentInfo.uma_name), currentInfo.level_name == null ? "NULL" : escape(currentInfo.level_name),
             currentInfo.friend_bonus, currentInfo.motivation_bonus, currentInfo.appear_rate_bonus, currentInfo.initial_favor_gauge,
