@@ -1,5 +1,5 @@
 package com.example;
-
+import java.util.Random;
 //使用者所選擇的指令(動作)
 public class Choice {
     private RoundInfo roundInfo = new RoundInfo();
@@ -88,12 +88,43 @@ public class Choice {
 
     //外出
     public void goOut(Uma uma){
-
+        Random rand = new Random();
+        int goOutChoice = rand.nextInt();
+        switch (goOutChoice) {
+            case 0://唱歌
+                uma.changeMood(2);
+                break;
+            case 1://散步
+                uma.changeMood(1);
+                uma.changeHp(10);
+                break;
+            case 2://神社
+                uma.changeMood(1);
+                int hp = rand.nextInt(3);
+                if(hp == 0 ){
+                    uma.changeHp(10);//小吉
+                }else if(hp == 1){
+                    uma.changeHp(20);//中吉
+                }else if(hp == 2 ){
+                    uma.changeHp(30);//大吉
+                }
+                break;
+            default:
+                break;
+        }
     }
 
     //休息
-    public void rest(){
-
+    public void rest(Uma uma){
+        Random rand = new Random();
+        int hp = rand.nextInt(100);
+        if(hp<=33){
+            uma.changeHp(30);
+        }else if(hp>33 && hp<=66){
+            uma.changeHp(50);
+        }else{
+            uma.changeHp(70);
+        }
     }
 
     //增加屬性
@@ -108,7 +139,7 @@ public class Choice {
 
     //保健室
     public void hospital(){
-
+        uma.changeHp(20);
     }
 
     //還有一些
