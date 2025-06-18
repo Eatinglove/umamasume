@@ -43,7 +43,7 @@ public class UmaEvent {
             while ((line = br.readLine()) != null) {
                 String fullUrl = URL_PREFIX + line;
                 //processCardEvent(driver, fullUrl);
-                processCardEvent(driver, "https://gametora.com/zh-tw/umamusume/characters/101202-hishi-amazon");
+                processCardEvent(driver, "https://gametora.com/zh-tw/umamusume/characters/100802-vodka");
                 break;
             }
         } catch (IOException e) {
