@@ -116,6 +116,7 @@ public class CardEventSqlGenerator {
             // 分類處理
             if (line.startsWith("分類:")) {
                 category = line.substring(3).trim();
+                chained = 0; // 重置鏈接計數
 
             // 事件處理
             } else if (line.startsWith("事件:")) {

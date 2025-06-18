@@ -1,9 +1,9 @@
 package com.example;
-//¥d¤ùªºÃş¡A¸Ì­±¦³³\¦h¸ò¥d¤ùªº¼Æ¾Ú
+//å¡ç‰‡çš„é¡ï¼Œè£¡é¢æœ‰è¨±å¤šè·Ÿå¡ç‰‡çš„æ•¸æ“š
 public class Card {
-    private int friend; // ¤Í±¡¥[¦¨
-    private int mood; // ·F«l¥[¦¨
-    private int train; // °V½m¥[¦¨
+    private int friend; // å‹æƒ…åŠ æˆ
+    private int mood; // å¹¹å‹åŠ æˆ
+    private int train; // è¨“ç·´åŠ æˆ
     private int initSpeed;
     private int initStamina;
     private int initPower;
@@ -20,9 +20,9 @@ public class Card {
     private int failRateDecrease;
     private int knowledgeRecover;
 
-    private int initLove; // ªì´Á±¡½Ë
-    private int love; // ±¡½Ë
-    private int appearRate; // ¾Õªø²v
+    private int initLove; // åˆæœŸæƒ…èª¼
+    private int love; // æƒ…èª¼
+    private int appearRate; // æ“…é•·ç‡
 
     public int getFriend() {
         return friend;
