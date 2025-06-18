@@ -1,5 +1,5 @@
 package com.example;
-
+//°¨ªºÃþ
 public class Uma {
     private int speed;
     private int stamina;

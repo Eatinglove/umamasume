@@ -1,5 +1,5 @@
 package com.example;
-
+//把每回合的數值存在這裡，之後從這裡拿取資訊來計算
 public class TrainStat {
     private int basic;
     private int friend;
@@ -7,7 +7,7 @@ public class TrainStat {
     private int people;
     private int trainBonus;
     private int hpcost;
-
+    //設定basic數值
     public void setBasicValue(Uma uma, int type, int main){
         int level;
         switch(type){
@@ -62,7 +62,7 @@ public class TrainStat {
                 break;
         }
     }
-
+    //設定其他的數值
     public void setOtherStuff(double[] roundStat){
 
     }

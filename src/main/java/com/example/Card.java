@@ -1,5 +1,5 @@
 package com.example;
-
+//卡片的類，裡面有許多跟卡片的數據
 public class Card {
     private int friend; // 友情加成
     private int mood; // 幹勁加成

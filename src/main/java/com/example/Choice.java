@@ -19,12 +19,13 @@ public class Choice {
     public void speedTrain(Uma uma){
         TrainStat speedTrainStat = new TrainStat();
         TrainStat powerTrainStat = new TrainStat();
-
+        //計算basic
         speedTrainStat.setBasicValue(uma, 1,1);
         powerTrainStat.setBasicValue(uma ,1,0);
-
+        //計算其他(友情，人頭等)
         speedTrainStat.setOtherStuff(roundInfo.getRoundStat(1));
         powerTrainStat.setOtherStuff(roundInfo.getRoundStat(1));
+        //跑訓練
         Train.trainSpeedCal(uma, speedTrainStat, powerTrainStat);
     }
 
