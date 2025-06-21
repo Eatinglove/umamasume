@@ -6,7 +6,7 @@ public class Choice {
     private RoundInfo roundInfo = new RoundInfo();
     private Uma uma = new Uma();
     private Card[] card = new Card[6];
-    private int choose;
+    private int choose=-1;
     private Train train = new Train();
 
     public void setUma(Uma uma){
@@ -18,9 +18,18 @@ public class Choice {
     public void setLabel(Label label){
         this.label = new Label();
     }
-    public void newTurn(){
+    public void newTurn(int roundLeft){
         roundInfo.newTurn(uma, card);
         train.setTrainLabel(choose, label, train.getAddValue(choose));
+        label.setNowMood(uma.getMood());
+        label.setNowHp(uma.getHp());
+        label.setSpeedLevel(uma.getSpeedLevel());
+        label.setStaminaLevel(uma.getStaminaLevel());
+        label.setPowerLevel(uma.getPowerLevel());
+        label.setWillLevel(uma.getWillLevel());
+        label.setKnowledgeLevel(uma.getKnowledgeLevel());
+        label.setRemainingRound(roundLeft);
+        
     }
     public void setTrainValue(){
     
@@ -39,22 +48,22 @@ public class Choice {
             if (success > prob) {
                 uma.changeMood(-1);
                 switch (type) {
-                    case 1 -> uma.changeSpeed(-5);
-                    case 2 -> uma.changeStamina(-5);
-                    case 3 -> uma.changePower(-5);
-                    case 4 -> uma.changeWill(-5);
-                    case 5 -> uma.changeKnowledge(-5);
+                    case 1 : uma.changeSpeed(-5);break;
+                    case 2 : uma.changeStamina(-5);break;
+                    case 3 : uma.changePower(-5);break;
+                    case 4 : uma.changeWill(-5);break;
+                    case 5 : uma.changeKnowledge(-5);break;
                 }
                 return;
             }
         }
 
         switch (type) {
-            case 1 -> train.speedTrain(uma);
-            case 2 -> train.staminaTrain(uma);
-            case 3 -> train.powerTrain(uma);
-            case 4 -> train.willTrain(uma);
-            case 5 -> train.knowledgeTrain(uma);
+            case 1 : train.speedTrain(uma);break;
+            case 2 : train.staminaTrain(uma);break;
+            case 3 : train.powerTrain(uma);break;
+            case 4 : train.willTrain(uma);break;
+            case 5 : train.knowledgeTrain(uma);break;
         }
 
         this.choose = type - 1; // 儲存這回合的訓練選擇（0~4）
@@ -136,4 +145,41 @@ public class Choice {
         }
     }
     //還有一些
+    public void action(int type){
+        switch (type) {
+            case 0:
+                doTrain(1);
+                break;
+            case 1:
+                doTrain(2);
+                break;
+            case 2:
+                doTrain(3);
+                break;        
+            case 3:
+                doTrain(4);
+                break;
+            case 4:
+                doTrain(5);
+                break;
+            case 5:
+                rest(uma);;
+                break;
+            case 6:
+                goOut(uma);
+                break;
+            case 7:
+                race(uma, type, type, type, type, type);
+                break;
+            case 8:
+                addStat(uma, type, type, type, type, type);;
+                break;
+            case 9:
+                hospital();
+                break;
+                
+            default:
+                break;
+        }
+    }
 }
