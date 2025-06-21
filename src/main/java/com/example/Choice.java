@@ -1,112 +1,86 @@
 package com.example;
 import java.util.Random;
-//¨Ï¥ÎªÌ©Ò¿ï¾Üªº«ü¥O(°Ê§@)
+//ä½¿ç”¨è€…æ‰€é¸æ“‡çš„æŒ‡ä»¤(å‹•ä½œ)
 public class Choice {
+    private Label label = new Label();
     private RoundInfo roundInfo = new RoundInfo();
     private Uma uma = new Uma();
     private Card[] card = new Card[6];
+    private int choose;
+    private Train train = new Train();
+
     public void setUma(Uma uma){
         this.uma=uma;
     } 
     public void setCard(Card[] card){
         this.card=card;
     }
+    public void setLabel(Label label){
+        this.label = new Label();
+    }
     public void newTurn(){
         roundInfo.newTurn(uma, card);
+        train.setTrainLabel(choose, label, train.getAddValue(choose));
     }
-    //¶Ç¤J°¨¡A°V½mºØÃş(type12345¬O³t«×­@¤O¤O¶q®Ú©Ê´¼¤O)¡A¥D°Æ°V½m(1¬O¥D0¬O°Æ)
-    //³t«×°V½m
-    public void speedTrain(Uma uma){
-        TrainStat speedTrainStat = new TrainStat();
-        TrainStat powerTrainStat = new TrainStat();
-        //­pºâbasic
-        speedTrainStat.setBasicValue(uma, 1,1);
-        powerTrainStat.setBasicValue(uma ,1,0);
-        //­pºâ¨ä¥L(¤Í±¡¡A¤HÀYµ¥)
-        speedTrainStat.setOtherStuff(roundInfo.getRoundStat(0));
-        powerTrainStat.setOtherStuff(roundInfo.getRoundStat(0));
-        //¶]°V½m
-        Train.trainSpeedCal(uma, speedTrainStat, powerTrainStat);
+    public void setTrainValue(){
+    
+        train.setSpeedValue(uma, roundInfo);
+        train.setStaminaValue(uma, roundInfo);
+        train.setPowerValue(uma, roundInfo);
+        train.setWillValue(uma, roundInfo);
+        train.setKnowledgeValue(uma, roundInfo);
+        
     }
+    public void doTrain(int type){
+        // HPéä½æ©Ÿç‡å¤±æ•—
+        if (uma.getHp() < 50) {
+            int prob = 100 - (50 - uma.getHp()) * 2;
+            int success = new Random().nextInt(100);
+            if (success > prob) {
+                uma.changeMood(-1);
+                switch (type) {
+                    case 1 -> uma.changeSpeed(-5);
+                    case 2 -> uma.changeStamina(-5);
+                    case 3 -> uma.changePower(-5);
+                    case 4 -> uma.changeWill(-5);
+                    case 5 -> uma.changeKnowledge(-5);
+                }
+                return;
+            }
+        }
 
-    //­@¤O°V½m
-    public void staminaTrain(Uma uma){
-        TrainStat staminaTrainStat = new TrainStat();
-        TrainStat willTrainStat = new TrainStat();
+        switch (type) {
+            case 1 -> train.speedTrain(uma);
+            case 2 -> train.staminaTrain(uma);
+            case 3 -> train.powerTrain(uma);
+            case 4 -> train.willTrain(uma);
+            case 5 -> train.knowledgeTrain(uma);
+        }
 
-        staminaTrainStat.setBasicValue(uma, 2,1);
-        willTrainStat.setBasicValue(uma ,2,0);
-
-        staminaTrainStat.setOtherStuff(roundInfo.getRoundStat(1));
-        willTrainStat.setOtherStuff(roundInfo.getRoundStat(1));
-        Train.trainStaminaCal(uma, staminaTrainStat, willTrainStat);
-    }
-
-    //¤O¶q°V½m
-    public void powerTrain(Uma uma){
-        TrainStat powerTrainStat = new TrainStat();
-        TrainStat staminaTrainStat = new TrainStat();
-
-        powerTrainStat.setBasicValue(uma, 3,1);
-        staminaTrainStat.setBasicValue(uma, 3,0);
-
-        powerTrainStat.setOtherStuff(roundInfo.getRoundStat(2));
-        staminaTrainStat.setOtherStuff(roundInfo.getRoundStat(2));
-        Train.trainPowerCal(uma, powerTrainStat, staminaTrainStat);
+        this.choose = type - 1; // å„²å­˜é€™å›åˆçš„è¨“ç·´é¸æ“‡ï¼ˆ0~4ï¼‰
     }
 
-    //®Ú©Ê°V½m
-    public void willTrain(Uma uma){
-        TrainStat willTrainStat = new TrainStat();
-        TrainStat speedTrainStat = new TrainStat();
-        TrainStat powerTrainStat = new TrainStat();
-
-        willTrainStat.setBasicValue(uma, 4,1);
-        speedTrainStat.setBasicValue(uma, 4,0);
-        powerTrainStat.setBasicValue(uma, 4,2);
-
-        willTrainStat.setOtherStuff(roundInfo.getRoundStat(3));
-        speedTrainStat.setOtherStuff(roundInfo.getRoundStat(3));
-        powerTrainStat.setOtherStuff(roundInfo.getRoundStat(3));
-
-        Train.trainWillCal(uma, willTrainStat, speedTrainStat, powerTrainStat);
-    }
-
-    //´¼¤O°V½m
-    public void knowledgeTrain(Uma uma){
-        TrainStat knowledgeTrainStat = new TrainStat();
-        TrainStat speedTrainStat = new TrainStat();
-
-        knowledgeTrainStat.setBasicValue(uma, 5,1);
-        speedTrainStat.setBasicValue(uma, 5,0);
-
-        knowledgeTrainStat.setOtherStuff(roundInfo.getRoundStat(4));
-        speedTrainStat.setOtherStuff(roundInfo.getRoundStat(4));
-
-        Train.trainKnowledgeCal(uma, knowledgeTrainStat, speedTrainStat);
-    }
-
-    //¥~¥X
+    //å¤–å‡º
     public void goOut(Uma uma){
         Random rand = new Random();
         int goOutChoice = rand.nextInt();
         switch (goOutChoice) {
-            case 0://°Ûºq
+            case 0://å”±æ­Œ
                 uma.changeMood(2);
                 break;
-            case 1://´²¨B
+            case 1://æ•£æ­¥
                 uma.changeMood(1);
                 uma.changeHp(10);
                 break;
-            case 2://¯«ªÀ
+            case 2://ç¥ç¤¾
                 uma.changeMood(1);
                 int hp = rand.nextInt(3);
                 if(hp == 0 ){
-                    uma.changeHp(10);//¤p¦N
+                    uma.changeHp(10);//å°å‰
                 }else if(hp == 1){
-                    uma.changeHp(20);//¤¤¦N
+                    uma.changeHp(20);//ä¸­å‰
                 }else if(hp == 2 ){
-                    uma.changeHp(30);//¤j¦N
+                    uma.changeHp(30);//å¤§å‰
                 }
                 break;
             default:
@@ -114,7 +88,7 @@ public class Choice {
         }
     }
 
-    //¥ğ®§
+    //ä¼‘æ¯
     public void rest(Uma uma){
         Random rand = new Random();
         int hp = rand.nextInt(100);
@@ -127,20 +101,39 @@ public class Choice {
         }
     }
 
-    //¼W¥[Äİ©Ê
-    public void addStat(){
-
+    //å¢åŠ å±¬æ€§
+    public void addStat(Uma uma, int speed, int stamina, int power, int will, int knowledge){
+        uma.changeSpeed(speed);
+        uma.changeStamina(stamina);
+        uma.changePower(power);
+        uma.changeWill(will);
+        uma.changeKnowledge(knowledge);
     }
 
-    //¤ñÁÉ
-    public void race(){
-
+    //æ¯”è³½
+    public void race(Uma uma, int speed, int stamina, int power, int will, int knowledge){
+        uma.changeSpeed(speed);
+        uma.changeStamina(stamina);
+        uma.changePower(power);
+        uma.changeWill(will);
+        uma.changeKnowledge(knowledge);
+        uma.changeHp(-20);
     }
 
-    //«O°·«Ç
+    //ä¿å¥å®¤
     public void hospital(){
         uma.changeHp(20);
     }
-
-    //ÁÙ¦³¤@¨Ç
+    //å¦‚æœå¡ç‰‡é€™å›åˆå‡ºç¾åœ¨çš„åœ°æ–¹ç­‰æ–¼é€™å›åˆé¸çš„è¨“ç·´ï¼Œå°æ‡‰å¡ç‰‡çš„æƒ…èª¼å¢åŠ 
+    public void endRound(Uma uma){
+        for(int i=0;i<6;i++){
+            if(card[i].getTrainEquip()==choose){
+                if(uma.condition.isLovelove()){
+                    card[i].setLove(7);
+                }
+                card[i].setLove(5);
+            }
+        }
+    }
+    //é‚„æœ‰ä¸€äº›
 }

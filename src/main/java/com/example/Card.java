@@ -24,6 +24,15 @@ public class Card {
     private int love; // 情誼
     private int appearRate; // 擅長率
 
+    private int trainEquip;//這回合在哪個訓練//1=speed 2=stamina
+
+    public void setTrainEquip(int value){
+        this.trainEquip = value;
+    }
+
+    public int getTrainEquip(){
+        return trainEquip;
+    }
     public int getFriend() {
         return friend;
     }
@@ -165,7 +174,7 @@ public class Card {
     }
 
     public void setLove(int love) {
-        this.love = love;
+        this.love += love;
     }
 
     public int getAppearRate() {

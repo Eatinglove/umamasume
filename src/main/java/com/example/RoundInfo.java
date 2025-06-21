@@ -1,32 +1,46 @@
 package com.example;
-//Àx¦s¨C¤@¦^¦Xªº¼Æ­È
+//å„²å­˜æ¯ä¸€å›åˆçš„æ•¸å€¼
 import java.util.Random;
 public class RoundInfo {
     private double[][] roundStat = new double[5][5];
+    public boolean[] isFriend= new boolean[5];
     //[5]speed stamina power will knowledge
-    //[4]mood people friend trainbonus(·F«l¥[¦¨¡A¤Í±¡¥[¦¨¡A°V½m¥[¦¨¡A¤HÀY¡A°V½m)
+    //[5]mood people friend trainbonus basic(å¹¹å‹åŠ æˆï¼Œå‹æƒ…åŠ æˆï¼Œè¨“ç·´åŠ æˆï¼Œäººé ­ï¼Œè¨“ç·´)
     public void newTurn(Uma uma, Card[] card){
-
+        
         for (int i = 0; i < 5; i++) {
             roundStat[i][1] = 1.0; 
             }
 
-        for(int i=0;i<5;i++){
+        for(int i=0;i<6;i++){//å…­å¼µå¡
             Random rand = new Random();
-            int randomValue = rand.nextInt(6);
-            if(randomValue==5){//¤£¥X²{
+            int randomValue = rand.nextInt(6);//0=speed, 1=stamina, 2=power, 3=will, 4=knowledge
+            if(randomValue==5){//ä¸å‡ºç¾
                 continue;
             }
-            roundStat[randomValue][0]+=card[i].getMood()/100;//·F«l¬Û¥[
-            roundStat[randomValue][1]*=(1+(card[i].getFriend())/100);//¤Í±¡¬Û­¼
-            roundStat[randomValue][2]+=card[i].getTrain()/100;//°V½m¥[¦¨
-            roundStat[randomValue][3]+=1;//¤H¼Æ+1
+            roundStat[randomValue][0]+=card[i].getMood()/100;//å¹¹å‹ç›¸åŠ 
+            roundStat[randomValue][1]*=(1+(card[i].getFriend())/100);//å‹æƒ…ç›¸ä¹˜
+            roundStat[randomValue][2]+=card[i].getTrain()/100;//è¨“ç·´åŠ æˆ
+            roundStat[randomValue][3]+=1;//äººæ•¸+1
             roundStat[randomValue][4]+=card[i].getTrain();//basic
-            
+            if(card[i].getFriend()>80){
+                isFriend[randomValue]=true;
+            }
+            card[i].setTrainEquip(randomValue);//ç´€éŒ„é€™å¼µå¡é€™å›åˆå‡ºç¾åœ¨å“ªå€‹è¨“ç·´
         }
     }
 
     public double[] getRoundStat(int type){
         return roundStat[type];
+    }
+
+    public void setFriendFalse(){
+        for(int i=0;i<5;i++){
+            isFriend[i]=false;
+        }
+    }
+
+    public boolean[] getIsFriend(){
+        return isFriend;
     }
 }

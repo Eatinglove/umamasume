@@ -1,5 +1,5 @@
 package com.example;
-//������
+//馬的類
 public class Uma {
     private int speed;
     private int stamina;
@@ -22,11 +22,28 @@ public class Uma {
     private int willLevel;
     private int knowledgeLevel;
 
-    private int maxLevel;
-
-    public int getMaxLevel(){
-        return 5;
+    private int maxLevel = 5;
+    private int maxHp = 100;
+    private int id;
+    public void setId(int id){
+        this.id=id;
     }
+    public int getId(){
+        return id;
+    }
+    Condition condition = new Condition();
+    public int getMaxLevel(){
+        return maxLevel;
+    }
+
+    public void changeMaxHp(int value){
+        this.maxHp+=value;
+    }
+
+    public int getMaxHp(){
+        return maxHp;
+    }
+
     public void changeSpeed(int value) {
         this.speed += value;
     }
@@ -48,7 +65,13 @@ public class Uma {
     }
 
     public void changeHp(int value) {
+        //超過上限就設為上限，低於0就是0
         this.hp += value;
+        if(this.hp>maxHp){
+            this.hp=maxHp;
+        }else if(this.hp<0){
+            this.hp=0;
+        }
     }
 
     public void changePt(int value) {
@@ -200,7 +223,7 @@ public class Uma {
         this.knowledgeLevel = 1;
 
         this.pt = 120;
-        this.mood = 3;//1��5
+        this.mood = 3;//1到5
         this.hp = 100;
         this.maxLevel = 5;
     }

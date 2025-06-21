@@ -1,13 +1,13 @@
 package com.example;
-//§â¨C¦^¦Xªº¼Æ­È¦s¦b³o¸Ì¡A¤§«á±q³o¸Ì®³¨ú¸ê°T¨Ó­pºâ
+//æŠŠæ¯å›åˆçš„æ•¸å€¼å­˜åœ¨é€™è£¡ï¼Œä¹‹å¾Œå¾é€™è£¡æ‹¿å–è³‡è¨Šä¾†è¨ˆç®—
 public class TrainStat {
     private double basic;
     private double friend;
     private double mood;
     private double people;
     private double trainBonus;
-    private double hpcost;
-    //³]©wbasic¼Æ­È
+    private int hpcost;
+    //è¨­å®šbasicæ•¸å€¼
     public void setBasicValue(Uma uma, int type, int main){
         int level;
         switch(type){
@@ -62,16 +62,16 @@ public class TrainStat {
                 break;
         }
     }
-    //³]©w¨ä¥Lªº¼Æ­È
+    //è¨­å®šå…¶ä»–çš„æ•¸å€¼
     public void setOtherStuff(double[] roundStat){
         this.mood=roundStat[0];
         this.friend=roundStat[1];
         this.trainBonus=roundStat[2];
-        this.people=1 + 0.05*roundStat[3];//1+¤HÀY¼Æ*0.05
-        this.basic= this.basic+roundStat[4];//¥[¤Wbasic
+        this.people=1 + 0.05*roundStat[3];//1+äººé ­æ•¸*0.05
+        this.basic= this.basic+roundStat[4];//åŠ ä¸Šbasic
     }
 
-    //¤@¯ë°V½m
+    //ä¸€èˆ¬è¨“ç·´
     public double getValue(){
 
         double value = 0;
@@ -81,7 +81,7 @@ public class TrainStat {
         return value;
     }
     
-    //¤Í±¡°V½m
+    //å‹æƒ…è¨“ç·´
     public double getFriendValue(){
         
         double value = 0;
@@ -91,11 +91,7 @@ public class TrainStat {
         return value;
     }
 
-    public double getHPCost(){
-        double value;
-
-        value=this.hpcost;
-
-        return value;
+    public int getHPCost(){
+        return this.hpcost;
     }
 }
