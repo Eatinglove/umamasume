@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
@@ -15,8 +16,11 @@ public class DataCollection {
     private static Random random = new Random();
 
     // 用於存儲已經處理過的事件 ID，避免重複
-    HashSet<Integer> umaEventSet = new HashSet<>();
-    HashSet<Integer> cardEventSet = new HashSet<>();
+    private static HashSet<Integer> umaEventSet = new HashSet<>();
+    private static HashSet<Integer> cardEventSet = new HashSet<>();
+
+    // 用於存儲卡片的連鎖ID和計數
+    private static HashMap<Integer, Integer> umaCardChainedCount = new HashMap<>();
 
     // MySQL 資料庫連線設定
     // 請根據實際情況修改以下參數
@@ -484,7 +488,7 @@ public class DataCollection {
     }
 
     // 獲取指定 UMA ID 的隨機一個事件並傳回
-    public Event getRandomUmaEvent(int uma_id) {
+    public static Event getRandomUmaEvent(int uma_id) {
         random.setSeed(System.currentTimeMillis());
         List<Event> events = GetUmaEventsById(uma_id);
 
@@ -509,7 +513,7 @@ public class DataCollection {
     }
 
     // 獲取指定 UMA ID 的隨機一個外出事件並傳回
-    public Event getRandomOutdoorEvent(int uma_id) {
+    public static Event getRandomOutdoorEvent(int uma_id) {
         random.setSeed(System.currentTimeMillis());
         List<Event> outdoorEvents = GetUmaOutdoorEventsById(uma_id);
 
@@ -534,7 +538,7 @@ public class DataCollection {
     }
 
     // 獲取指定 UMA ID 的隨機一個卡片事件並傳回
-    public CardEvent getRandomCardEvent(int uma_id) {
+    public static CardEvent getRandomCardEvent(int uma_id) {
         random.setSeed(System.currentTimeMillis());
         List<CardEvent> cardEvents = GetCardEventByCardUmaId(uma_id);
 
@@ -551,13 +555,33 @@ public class DataCollection {
 
             // 檢查是否已經處理過這個事件
             if (!cardEventSet.contains(randomCardEvent.event_id)) {
-                // 如果沒有處理過，則將其加入已處理集合並返回
-                cardEventSet.add(randomCardEvent.event_id);
-                return randomCardEvent;
+                // 如果沒有連鎖計數，則初始化連鎖計數
+                if (umaCardChainedCount.get(randomCardEvent.event_id) == null) {
+                    // 初始化連鎖計數為 0
+                    umaCardChainedCount.put(randomCardEvent.event_id, 0);
+                }
+
+                // 檢查是否有連鎖選項
+                if (randomCardEvent.choices.get(0).chain_index != 0) {
+                    int chainedCount = umaCardChainedCount.get(randomCardEvent.event_id);
+                    int chain_index = randomCardEvent.choices.get(0).chain_index;
+
+                    if (chain_index == chainedCount + 1){
+                        // 如果連鎖計數等於選項的連鎖索引，則返回這個事件
+                        umaCardChainedCount.put(randomCardEvent.event_id, chainedCount + 1);
+                        return randomCardEvent;
+                    }
+                    
+                } else {
+                    // 如果沒有連鎖選項，則直接返回這個事件
+                    cardEventSet.add(randomCardEvent.event_id);
+                    return randomCardEvent;
+                }
             }
         }
     }
-
-
 }
+
+
+
 

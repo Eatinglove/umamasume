@@ -144,24 +144,24 @@ public class Train {
     // 顯示用：更新 UI Label 的數值
     public void setTrainLabel(int button, Label label, int[] addValue) {
         switch (button) {
-            case 1 -> {
+            case 1 : {
                 label.setAddSpeed(addValue[0]);
                 label.setAddPower(addValue[1]);
             }
-            case 2 -> {
+            case 2 : {
                 label.setAddStamina(addValue[0]);
                 label.setAddWill(addValue[1]);
             }
-            case 3 -> {
+            case 3 : {
                 label.setAddPower(addValue[0]);
                 label.setAddStamina(addValue[1]);
             }
-            case 4 -> {
+            case 4 : {
                 label.setAddWill(addValue[0]);
                 label.setAddSpeed(addValue[1]);
                 label.setAddPower(addValue[2]);
             }
-            case 5 -> {
+            case 5 : {
                 label.setAddKnowledge(addValue[0]);
                 label.setAddSpeed(addValue[1]);
             }
