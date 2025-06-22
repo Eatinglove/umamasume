@@ -25,13 +25,14 @@ public class Uma {
     private int maxLevel = 5;
     private int maxHp = 100;
     private int id;
+    Condition condition = new Condition();
     public void setId(int id){
         this.id=id;
     }
     public int getId(){
         return id;
     }
-    Condition condition = new Condition();
+    
     public int getMaxLevel(){
         return maxLevel;
     }
@@ -109,43 +110,43 @@ public class Uma {
     }
 
     public int getSpeedLevel() {
-        return speedLevel;
+        return speedLevel/4+1;
     }
 
     public void setSpeedLevel(int speedLevel) {
-        this.speedLevel = speedLevel;
+        this.speedLevel += speedLevel;
     }
 
     public int getStaminaLevel() {
-        return staminaLevel;
+        return staminaLevel/4+1;
     }
 
     public void setStaminaLevel(int staminaLevel) {
-        this.staminaLevel = staminaLevel;
+        this.staminaLevel += staminaLevel;
     }
 
     public int getPowerLevel() {
-        return powerLevel;
+        return powerLevel/4+1;
     }
 
     public void setPowerLevel(int powerLevel) {
-        this.powerLevel = powerLevel;
+        this.powerLevel += powerLevel;
     }
 
     public int getWillLevel() {
-        return willLevel;
+        return willLevel/4+1;
     }
 
     public void setWillLevel(int willLevel) {
-        this.willLevel = willLevel;
+        this.willLevel += willLevel;
     }
 
     public int getKnowledgeLevel() {
-        return knowledgeLevel;
+        return knowledgeLevel/4+1;
     }
 
     public void setKnowledgeLevel(int knowledgeLevel) {
-        this.knowledgeLevel = knowledgeLevel;
+        this.knowledgeLevel += knowledgeLevel;
     }
 
     public int getSpeed() {

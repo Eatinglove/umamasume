@@ -113,6 +113,7 @@ public class Train {
     public void speedTrain(Uma uma) {
         uma.changeSpeed(allValue[0][0]);
         uma.changePower(allValue[0][1]);
+        uma.setSpeedLevel(1);
     }
 
     public void staminaTrain(Uma uma) {
@@ -144,27 +145,33 @@ public class Train {
     // 顯示用：更新 UI Label 的數值
     public void setTrainLabel(int button, Label label, int[] addValue) {
         switch (button) {
-            case 1 : {
+            case 1 : 
                 label.setAddSpeed(addValue[0]);
                 label.setAddPower(addValue[1]);
-            }
-            case 2 : {
+                break;
+            
+            case 2 : 
                 label.setAddStamina(addValue[0]);
                 label.setAddWill(addValue[1]);
-            }
-            case 3 : {
+                break;
+            
+            case 3 : 
                 label.setAddPower(addValue[0]);
                 label.setAddStamina(addValue[1]);
-            }
-            case 4 : {
+                break;
+            
+            case 4 : 
                 label.setAddWill(addValue[0]);
                 label.setAddSpeed(addValue[1]);
                 label.setAddPower(addValue[2]);
-            }
-            case 5 : {
+                break;
+            
+            case 5 : 
                 label.setAddKnowledge(addValue[0]);
                 label.setAddSpeed(addValue[1]);
-            }
+                break;
+            
         }
     }
+    
 }
