@@ -457,7 +457,10 @@ public class DataCollection {
 
     // 獲取所有隨機事件的卡片事件資料
     // 這個方法會查詢資料庫中的 card_events 表，根據 category = "隨機事件"
-    public static void GetAllCardRandomEvent() {
+    public static CardEvent getAllCardRandomEvent() {
+        //init 
+        List<CardEvent> events = new ArrayList<>();
+
         // SQL 查詢語句
         String sql = "SELECT * FROM card_events WHERE category = \"隨機事件\";";
 
@@ -471,12 +474,16 @@ public class DataCollection {
 
                 while (rs.next()) {
                     hasData = true;
+                    CardEvent event = new CardEvent();
 
-                    int event_id = rs.getInt("event_id");
-                    String event_name = rs.getString("event_name");
-                    int uma_id = rs.getInt("uma_id");
-                    String uma_name = rs.getString("uma_name");
-                    System.out.println("event_id: " + event_id + ", event_name: " + event_name + ", uma_id: " + uma_id + ", uma_name: " + uma_name);
+                    event.event_id = rs.getInt("event_id");
+                    event.event_name = rs.getString("event_name");
+                    event.uma_id = rs.getInt("uma_id");
+                    event.uma_name = rs.getString("uma_name");
+                    event.category = rs.getString("category");
+                    event.choices = GetCardEventChoiceByCardEventId(event.event_id);
+
+                    events.add(event);
                 }
                 if (!hasData) {
                     System.out.println("查無資料");
@@ -485,6 +492,30 @@ public class DataCollection {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+        random.setSeed(System.currentTimeMillis());
+
+        while (true) {
+            int i = 0;
+            // 隨機選擇一個事件
+            int randomIndex = random.nextInt(events.size());
+            CardEvent randomEvent = events.get(randomIndex % events.size());
+
+            // 檢查是否已經處理過這個事件
+            if (!umaEventSet.contains(randomEvent.event_id)) {
+                // 如果沒有處理過，則將其加入已處理集合並返回
+                umaEventSet.add(randomEvent.event_id);
+                return randomEvent;
+            }
+
+            if (i > 100) {
+                // 如果已經嘗試了 100 次還沒有找到未處理的事件，則返回 null
+                System.out.println("沒有找到未處理的隨機事件");
+                return null;
+            }
+            i++;
+        }
+
     }
 
     // 獲取指定 UMA ID 的隨機一個事件並傳回
@@ -499,6 +530,7 @@ public class DataCollection {
         }
 
         while (true) {
+            int i = 0;
             // 隨機選擇一個事件
             int randomIndex = random.nextInt(events.size());
             Event randomEvent = events.get(randomIndex % events.size());
@@ -509,6 +541,13 @@ public class DataCollection {
                 umaEventSet.add(randomEvent.event_id);
                 return randomEvent;
             }
+
+            if (i > 100) {
+                // 如果已經嘗試了 100 次還沒有找到未處理的事件，則返回 null
+                System.out.println("沒有找到未處理的事件");
+                return null;
+            }
+            i++;
         }
     }
 
@@ -524,6 +563,7 @@ public class DataCollection {
         }
 
         while (true) {
+            int i = 0;
             // 隨機選擇一個外出事件
             int randomIndex = random.nextInt(outdoorEvents.size());
             Event randomOutdoorEvent = outdoorEvents.get(randomIndex % outdoorEvents.size());
@@ -534,6 +574,13 @@ public class DataCollection {
                 umaEventSet.add(randomOutdoorEvent.event_id);
                 return randomOutdoorEvent;
             }
+
+            if (i > 100) {
+                // 如果已經嘗試了 100 次還沒有找到未處理的外出事件，則返回 null
+                System.out.println("沒有找到未處理的外出事件");
+                return null;
+            }
+            i++;
         }
     }
 
@@ -549,6 +596,8 @@ public class DataCollection {
         }
 
         while (true) {
+            int i = 0;
+
             // 隨機選擇一個卡片事件
             int randomIndex = random.nextInt(cardEvents.size());
             CardEvent randomCardEvent = cardEvents.get(randomIndex % cardEvents.size());
@@ -571,13 +620,20 @@ public class DataCollection {
                         umaCardChainedCount.put(randomCardEvent.event_id, chainedCount + 1);
                         return randomCardEvent;
                     }
-                    
+
                 } else {
                     // 如果沒有連鎖選項，則直接返回這個事件
                     cardEventSet.add(randomCardEvent.event_id);
                     return randomCardEvent;
                 }
             }
+
+            if (i > 100) {
+                // 如果已經嘗試了 100 次還沒有找到未處理的事件，則返回 null
+                System.out.println("沒有找到未處理的卡片事件");
+                return null;
+            }
+            i++;
         }
     }
 }
